@@ -3,7 +3,10 @@
 
 ## 1. Creación de Máquinas Virtuales
 
-Creamos las máquinas virtuales indicadas en la práctica usando **Hyper-V**.
+Antes de todo, debemos realizar la creación de las máquinas virtuales, que deben ser las siguientes:
+- Una máquina de Ubuntu Server en la versión 22.04.
+- Otra máquina de Ubuntu Desktop.
+- Por último, una máquina de Windows, que podemos elegir entre Windows 10 y Windows 11.
 
 ---
 
@@ -26,6 +29,10 @@ Editamos el archivo de configuración de red:
 
 ```
 sudo nano /etc/netplan/00-installer-config.yaml
+```
+También se puede editar el archivo de configuración de red que existe en el directorio, que es el siguiente:
+```
+sudo nano /etc/netplan/50-cloud-init.yaml
 ```
 
 Agregamos los datos necesarios para la IP estática (ejemplo):
@@ -57,7 +64,21 @@ Ejecutamos:
 sudo nano /etc/netplan/01-network-manager-all.yaml
 ```
 
-Y escribimos la configuración de IP estática correspondiente. Luego aplicamos:
+Y escribimos la configuración de IP estática correspondiente. 
+
+```yaml
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses: [192.168.1.101/24]
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+```
+
+Para guardar los cambios de red aplicaremos el siguiente comando:
 
 ```
 sudo netplan apply
