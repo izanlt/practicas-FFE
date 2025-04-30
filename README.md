@@ -223,7 +223,7 @@ sudo nano /etc/systemd/system.conf
 
 Cambiar los valores necesarios, como:
 
-![Captura valores 1](/imagenes/valores.jpg)
+![Captura valores 1](/imagenes/valores.jpg) ![Captura valores 1](/imagenes/valores2.jpg)
 
 ---
 
