@@ -231,13 +231,9 @@ ssl_certificate_key /etc/ssl/private/jitsi.key;
 
 ## 8. Reiniciar los servicios
 
-```bash
+```
 sudo systemctl reload nginx
 sudo systemctl restart prosody
 sudo systemctl restart jicofo
 sudo systemctl restart jitsi-videobridge2
 ```
-
----
-
-## ✅ ¡Servidor Jitsi Meet instalado y configurado con éxito!
