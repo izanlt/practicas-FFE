@@ -30,19 +30,15 @@ sudo nano /etc/netplan/00-installer-config.yaml
 
 Agregamos los datos necesarios para la IP estática (ejemplo):
 
-```yaml
+```
 network:
-  version: 2
   ethernets:
     eth0:
       dhcp4: no
-      addresses:
-        - 192.168.1.200/24
-      gateway4: 192.168.1.1
-      nameservers:
-        addresses:
-          - 8.8.8.8
-          - 8.8.4.4
+      addresses: [192.168.1.100/24]
+    eth1:
+      dhcp4: yes
+version: 2
 ```
 
 Guardamos y aplicamos los cambios:
