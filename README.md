@@ -213,16 +213,17 @@ ice4j {
 
 ---
 
-## 6. Configurar Jitsi para 100 participantes
+## 6. Configurar Jitsi para más de 100 participantes
 
-Editar el archivo:
+Editar el archivo `/etc/systemd/system.conf`:
 
 ```
-sudo nano /etc/jitsi/meet/tu-dominio-config.js
+sudo nano /etc/systemd/system.conf
 ```
 
 Cambiar los valores necesarios, como:
 
+![Captura valores 1](/imagenes/valores.jpg)
 
 ---
 
