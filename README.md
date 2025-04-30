@@ -144,6 +144,7 @@ Durante la instalación:
 
 - Introducir el dominio (por ejemplo: `jitsimeetizan.duckdns.org`).
 - Introducir correo electrónico.
+- También en algún momento nos pedirá el número de teléfono, pero **NO** es necesario.
 - En la parte del certificado, seleccionar la tercera opción (generar auto-firmado).
 
 ---
