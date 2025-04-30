@@ -13,7 +13,7 @@ Dentro de la máquina virtual de Ubuntu Server, instalamos SSH ejecutando:
 
 ```bash
 sudo apt update
-sudo apt install openssh-server
+sudo apt install openssh
 ```
 
 ---
