@@ -11,7 +11,7 @@ Creamos las máquinas virtuales indicadas en la práctica usando **Hyper-V**.
 
 Dentro de la máquina virtual de Ubuntu Server, instalamos SSH ejecutando:
 
-```bash
+```
 sudo apt update
 sudo apt install openssh
 ```
@@ -24,13 +24,13 @@ sudo apt install openssh
 
 Editamos el archivo de configuración de red:
 
-```bash
+```
 sudo nano /etc/netplan/00-installer-config.yaml
 ```
 
 Agregamos los datos necesarios para la IP estática (ejemplo):
 
-```
+```yaml
 network:
   ethernets:
     eth0:
@@ -43,7 +43,7 @@ version: 2
 
 Guardamos y aplicamos los cambios:
 
-```bash
+```
 sudo netplan apply
 ```
 
@@ -53,13 +53,13 @@ sudo netplan apply
 
 Ejecutamos:
 
-```bash
+```
 sudo nano /etc/netplan/01-network-manager-all.yaml
 ```
 
 Y escribimos la configuración de IP estática correspondiente. Luego aplicamos:
 
-```bash
+```
 sudo netplan apply
 ```
 
@@ -80,25 +80,25 @@ sudo netplan apply
 
 ### Actualizar el sistema:
 
-```bash
+```
 sudo apt update && sudo apt upgrade
 ```
 
 ### Verificar compatibilidad con repositorios HTTPS:
 
-```bash
+```
 sudo apt install apt-transport-https
 ```
 
 ### Habilitar el repositorio `universe`:
 
-```bash
+```
 sudo add-apt-repository universe
 ```
 
 Y actualizamos nuevamente:
 
-```bash
+```
 sudo apt update
 ```
 
@@ -106,15 +106,17 @@ sudo apt update
 
 ### Añadir repositorios:
 
-```bash
+**Prosody:**
+
+```
 sudo curl https://packages.prosody.im/debian/prosody-archive.key -o /usr/share/keyrings/prosody-archive.key
 echo 'deb [signed-by=/usr/share/keyrings/prosody-archive.key] https://packages.prosody.im/debian bookworm main' | sudo tee /etc/apt/sources.list.d/prosody.list
 sudo apt update
 ```
 
-Para Jitsi:
+**Para Jitsi:**
 
-```bash
+```
 curl https://download.jitsi.org/jitsi-key.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/jitsi-keyring.gpg
 echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/' | sudo tee /etc/apt/sources.list.d/jitsi-stable.list
 sudo apt update
@@ -122,9 +124,9 @@ sudo apt update
 
 ---
 
-### Abrir puertos en el firewall (si aplica):
+### Abrir puertos en el firewall:
 
-```bash
+```
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 sudo ufw allow 10000/udp
@@ -134,7 +136,7 @@ sudo ufw allow 10000/udp
 
 ### Instalar Jitsi Meet
 
-```bash
+```
 sudo apt install jitsi-meet
 ```
 
@@ -150,7 +152,7 @@ Durante la instalación:
 
 Editar el archivo de configuración:
 
-```bash
+```
 sudo nano /etc/jitsi/videobridge/sip-communicator.properties
 ```
 
@@ -163,7 +165,7 @@ org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=80.58.95.131
 
 O unificar en formato estructurado (en otro archivo como `jvb.conf`):
 
-```hocon
+```
 ice4j {
   harvest {
     mapping {
@@ -184,15 +186,12 @@ ice4j {
 
 Editar el archivo:
 
-```bash
+```
 sudo nano /etc/jitsi/meet/tu-dominio-config.js
 ```
 
 Cambiar los valores necesarios, como:
 
-```javascript
-channelLastN: 100,
-```
 
 ---
 
@@ -200,25 +199,25 @@ channelLastN: 100,
 
 Ir al directorio de certificados:
 
-```bash
+```
 cd /etc/ssl
 ```
 
 Crear certificado autofirmado:
 
-```bash
+```
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/jitsi.key -out /etc/ssl/certs/jitsi.crt -subj "/CN=jitsimeetizan.duckdns.org"
 ```
 
 Editar la configuración de nginx:
 
-```bash
+```
 sudo nano /etc/nginx/sites-available/tu-dominio.conf
 ```
 
 Reemplazar estas líneas:
 
-```nginx
+```
 ssl_certificate /etc/ssl/certs/jitsi.crt;
 ssl_certificate_key /etc/ssl/private/jitsi.key;
 ```
