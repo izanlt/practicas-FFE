@@ -198,8 +198,6 @@ Cambiar los valores necesarios, como:
 channelLastN: 100,
 ```
 
-Y otros parámetros relacionados si se requiere (p. ej., `startAudioOnly`, `startWithVideoMuted`, etc.).
-
 ---
 
 ## 7. Configurar certificado SSL
