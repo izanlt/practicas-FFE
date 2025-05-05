@@ -386,7 +386,7 @@ sudo nano /usr/share/jitsi-meet/interface_config.js
 
 ---
 
-### CAMBIO DE TÍTULO
+### Cambio de título
 
 Dentro de ese archivo, buscamos la siguiente línea y la modificamos para establecer el título personalizado:
 
