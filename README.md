@@ -264,3 +264,135 @@ sudo systemctl restart prosody
 sudo systemctl restart jicofo
 sudo systemctl restart jitsi-videobridge2
 ```
+
+# AUTENTICACIÓN
+
+Entramos en el siguiente fichero por medio de nuestro **hostname**, en el que editaremos lo necesario para la autenticación:
+
+```bash
+sudo nano /etc/prosody/conf.avail/jitsimeetizan.duckdns.org.cfg.lua
+```
+
+Dentro del fichero, editaremos lo siguiente:
+
+- Habilitación de la autenticación
+
+Cambiamos en el bloque de `VirtualHost "<hostname>"`, en la parte de `authentication` que viene por defecto con el valor de `anonymous`. Lo cambiaremos a `"internal_hashed"` para activar la autenticación:
+
+```lua
+VirtualHost "jitsimeetizan.duckdns.org"
+    authentication = "internal_hashed"
+```
+
+Añadimos el siguiente bloque al fichero que estamos editando para que el **inicio de sesión sea anónimo**:
+
+```lua
+VirtualHost "guest.jitsimeetizan.duckdns.org"
+    authentication = "anonymous"
+    c2s_require_encryption = false
+```
+
+---
+
+## CONFIGURACIÓN DE JITSI MEET
+
+Entramos en el siguiente fichero:
+
+```bash
+sudo nano /etc/jitsi/meet/jitsimeetizan.duckdns.org-config.js
+```
+
+Añadimos la parte de `anonymousdomain` en el fichero, en el bloque de `var config`:
+
+```javascript
+var config = {
+    // Connection
+    hosts: {
+        domain: 'jitsimeetizan.duckdns.org',
+        anonymousdomain: 'guest.jitsimeetizan.duckdns.org',
+    }
+}
+```
+
+---
+
+## CONFIGURACIÓN DE JICOFO
+
+Entramos en este archivo y le agregamos la siguiente línea:
+
+```bash
+sudo nano /etc/jitsi/jicofo/jicofo.conf
+```
+
+Agregamos lo siguiente:
+
+```hocon
+authentication: {
+    enabled: true
+    type: XMPP
+    login-url: jitsimeetizan.duckdns.org
+}
+```
+
+---
+
+## CREACIÓN DE ADMINISTRADORES
+
+Primero crearemos un usuario normal con el siguiente comando:
+
+```bash
+sudo prosodyctl adduser admin@jitsimeetizan.duckdns.org
+```
+
+Salida esperada:
+
+```text
+OK: Created admin@jitsimeetizan.duckdns.org with role 'prosody:member'
+```
+
+Para convertirlo en administrador, editamos:
+
+```bash
+sudo nano /etc/prosody/conf.avail/jitsimeetizan.duckdns.org.cfg.lua
+```
+
+Y agregamos este bloque:
+
+```lua
+admins = { "admin@jitsimeetizan.duckdns.org" }
+```
+
+En este bloque agregaremos los administradores que deseemos.
+
+---
+
+## REINICIO DE SERVICIOS
+
+Reiniciamos los servidores de Jitsi:
+
+```bash
+sudo systemctl restart prosody
+sudo systemctl restart jicofo
+sudo systemctl restart jitsi-videobridge2
+```
+
+## PERSONALIZACIÓN DE LA INTERFAZ
+
+Para realizar los cambios que nos indica la práctica, tendremos que editar el siguiente archivo:
+
+```bash
+sudo nano /usr/share/jitsi-meet/interface_config.js
+```
+
+---
+
+### CAMBIO DE TÍTULO
+
+Dentro de ese archivo, buscamos la siguiente línea y la modificamos para establecer el título personalizado:
+
+```javascript
+APP_NAME: 'Mi Jitsi Personalizado',
+```
+
+Puedes cambiar `'Mi Jitsi Personalizado'` por el texto que desees mostrar como título en la interfaz del sitio.
+
