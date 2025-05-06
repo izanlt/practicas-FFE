@@ -344,7 +344,7 @@ Primero crearemos un usuario normal con el siguiente comando:
 sudo prosodyctl adduser admin@jitsimeetizan.duckdns.org
 ```
 
-Salida esperada:
+Al introducir el último comando, la salida es la siguiente. El rol que tiene al crearlo es de miembro, por lo que debemos cambiarlo a administrador.
 
 ```
 OK: Created admin@jitsimeetizan.duckdns.org with role 'prosody:member'
@@ -375,6 +375,7 @@ sudo systemctl restart prosody
 sudo systemctl restart jicofo
 sudo systemctl restart jitsi-videobridge2
 ```
+---
 
 ## Personalización de la interfaz
 
@@ -407,7 +408,7 @@ Para cambiar el **título de la cabecera**, tenemos que editar el archivo:
 /usr/share/jitsi-meet/lang/main-es.json
 ```
 
-Buscar la clave `headerTitle` y cambiarla por el texto deseado.
+Buscar la clave `headerTitle` y cambiarla por el texto que se desee.
 
 Ejemplo:
 
@@ -441,13 +442,13 @@ var config = {
 
 Creamos el siguiente script:
 
-```bash
+```
 sudo nano crear_usuario.sh
 ```
 
 Dentro del archivo, agregamos:
 
-```bash
+```
 echo "Introduce el nombre del nuevo usuario:"
 read username
 password=$(openssl rand -base64 12)
@@ -460,15 +461,15 @@ echo "Usuario '$username' creado con contraseña: $password"
 
 ### Crear script para backup
 
-Ahora creamos un script para respaldar la configuración de Jitsi:
+A continuación crearemos un script de respaldo:
 
-```bash
+```
 sudo nano backup_jitsi.sh
 ```
 
-Contenido del script:
+El contenido del script será el siguiente:
 
-```bash
+```
 config_dir="/etc/jitsi"
 backup_dir="/backup/jitsi"
 fecha=$(date '+%Y-%m-%d_%H-%M-%S')
