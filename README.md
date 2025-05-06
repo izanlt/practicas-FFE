@@ -1,7 +1,7 @@
 
 # DOCUMENTACIÓN PROYECTO JITSI MEET
 
-## 1. Creación de Máquinas Virtuales
+## 1. Creación de máquinas virtuales
 
 Antes de todo, debemos realizar la creación de las máquinas virtuales, que deben ser las siguientes:
 - Una máquina de Ubuntu Server en la versión 22.04.
@@ -21,7 +21,7 @@ sudo apt install openssh
 
 ---
 
-## 3. Configuración de IP Estática
+## 3. Configuración de IP estática
 
 ### En Ubuntu Server
 
@@ -97,7 +97,7 @@ sudo netplan apply
 
 ---
 
-## 4. Instalación del Servidor Jitsi Meet
+## 4. Instalación del servidor Jitsi Meet
 
 ### Actualizar el sistema:
 
