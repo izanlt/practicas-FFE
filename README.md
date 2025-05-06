@@ -294,7 +294,7 @@ VirtualHost "guest.jitsimeetizan.duckdns.org"
 
 ---
 
-## CONFIGURACIÓN DE JITSI MEET
+## Configuración de Jitsi Meet
 
 Entramos en el siguiente fichero:
 
@@ -316,7 +316,7 @@ var config = {
 
 ---
 
-## CONFIGURACIÓN DE JICOFO
+## Configuración de Jicofo
 
 Entramos en este archivo y le agregamos la siguiente línea:
 
@@ -336,7 +336,7 @@ authentication: {
 
 ---
 
-## CREACIÓN DE ADMINISTRADORES
+## Creación de administradores
 
 Primero crearemos un usuario normal con el siguiente comando:
 
@@ -366,7 +366,7 @@ En este bloque agregaremos los administradores que deseemos.
 
 ---
 
-## REINICIO DE SERVICIOS
+## Reinicio de servicios
 
 Reiniciamos los servidores de Jitsi:
 
@@ -376,7 +376,7 @@ sudo systemctl restart jicofo
 sudo systemctl restart jitsi-videobridge2
 ```
 
-## PERSONALIZACIÓN DE LA INTERFAZ
+## Personalización de la interfaz
 
 Para realizar los cambios que nos indica la práctica, tendremos que editar el siguiente archivo:
 
@@ -396,3 +396,101 @@ APP_NAME: 'Mi Jitsi Personalizado',
 
 Puedes cambiar `'Mi Jitsi Personalizado'` por el texto que desees mostrar como título en la interfaz del sitio.
 
+
+# Personalización y Automatización en Jitsi Meet
+
+## Cambiar el título de la cabecera
+
+Para cambiar el **título de la cabecera**, tenemos que editar el archivo:
+
+```
+/usr/share/jitsi-meet/lang/main-es.json
+```
+
+Buscar la clave `headerTitle` y cambiarla por el texto deseado.
+
+Ejemplo:
+
+```json
+"headerTitle": "¡Bienvenido a Mi Jitsi!"
+```
+
+## Deshabilitar compartir pantalla y chat
+
+Editamos el archivo de configuración:
+
+```bash
+sudo nano /etc/jitsi/meet/jitsimeetizan.duckdns.org-config.js
+```
+
+Dentro del bloque `var config`, agregamos:
+
+```javascript
+var config = {
+    disableChat: true,
+    disableScreenSharing: true,
+    // ...
+};
+```
+
+---
+
+## Automatización y administración
+
+### Crear script para crear usuarios
+
+Creamos el siguiente script:
+
+```bash
+sudo nano crear_usuario.sh
+```
+
+Dentro del archivo, agregamos:
+
+```bash
+#!/bin/bash
+
+echo "Introduce el nombre del nuevo usuario:"
+read username
+
+# Generar contraseña aleatoria
+password=$(openssl rand -base64 12)
+
+# Crear usuario con la contraseña
+useradd -m -s /bin/bash "$username"
+echo "$username:$password" | chpasswd
+
+# Mostrar información
+echo "Usuario '$username' creado con contraseña: $password"
+```
+
+---
+
+### Crear script para backup
+
+Ahora creamos un script para respaldar la configuración de Jitsi:
+
+```bash
+sudo nano backup_jitsi.sh
+```
+
+Contenido del script:
+
+```bash
+#!/bin/bash
+
+# Directorio de origen
+config_dir="/etc/jitsi"
+
+# Directorio de respaldo
+backup_dir="/backup/jitsi"
+
+# Fecha actual
+fecha=$(date '+%Y-%m-%d_%H-%M-%S')
+
+# Crear respaldo
+mkdir -p "$backup_dir"
+cp -r "$config_dir" "$backup_dir/jitsi_backup_$fecha"
+
+echo "Copia de seguridad guardada en $backup_dir/jitsi_backup_$fecha"
+```
