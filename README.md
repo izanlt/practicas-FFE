@@ -12,7 +12,7 @@ Antes de todo, debemos realizar la creación de las máquinas virtuales, que deb
 
 ## 2. Configuración de SSH en Ubuntu Server
 
-Dentro de la máquina virtual de Ubuntu Server, instalamos SSH ejecutando:
+Dentro de la máquina virtual de Ubuntu Server, instalamos SSH con el siguiente comando:
 
 ```
 sudo apt update
