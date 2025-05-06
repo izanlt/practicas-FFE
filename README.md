@@ -269,7 +269,7 @@ sudo systemctl restart jitsi-videobridge2
 
 Entramos en el siguiente fichero por medio de nuestro **hostname**, en el que editaremos lo necesario para la autenticación:
 
-```bash
+```
 sudo nano /etc/prosody/conf.avail/jitsimeetizan.duckdns.org.cfg.lua
 ```
 
@@ -279,14 +279,14 @@ Dentro del fichero, editaremos lo siguiente:
 
 Cambiamos en el bloque de `VirtualHost "<hostname>"`, en la parte de `authentication` que viene por defecto con el valor de `anonymous`. Lo cambiaremos a `"internal_hashed"` para activar la autenticación:
 
-```lua
+```
 VirtualHost "jitsimeetizan.duckdns.org"
     authentication = "internal_hashed"
 ```
 
 Añadimos el siguiente bloque al fichero que estamos editando para que el **inicio de sesión sea anónimo**:
 
-```lua
+```
 VirtualHost "guest.jitsimeetizan.duckdns.org"
     authentication = "anonymous"
     c2s_require_encryption = false
@@ -298,13 +298,13 @@ VirtualHost "guest.jitsimeetizan.duckdns.org"
 
 Entramos en el siguiente fichero:
 
-```bash
+```
 sudo nano /etc/jitsi/meet/jitsimeetizan.duckdns.org-config.js
 ```
 
 Añadimos la parte de `anonymousdomain` en el fichero, en el bloque de `var config`:
 
-```javascript
+```
 var config = {
     // Connection
     hosts: {
@@ -320,13 +320,13 @@ var config = {
 
 Entramos en este archivo y le agregamos la siguiente línea:
 
-```bash
+```
 sudo nano /etc/jitsi/jicofo/jicofo.conf
 ```
 
 Agregamos lo siguiente:
 
-```hocon
+```
 authentication: {
     enabled: true
     type: XMPP
@@ -340,25 +340,25 @@ authentication: {
 
 Primero crearemos un usuario normal con el siguiente comando:
 
-```bash
+```
 sudo prosodyctl adduser admin@jitsimeetizan.duckdns.org
 ```
 
 Salida esperada:
 
-```text
+```
 OK: Created admin@jitsimeetizan.duckdns.org with role 'prosody:member'
 ```
 
 Para convertirlo en administrador, editamos:
 
-```bash
+```
 sudo nano /etc/prosody/conf.avail/jitsimeetizan.duckdns.org.cfg.lua
 ```
 
 Y agregamos este bloque:
 
-```lua
+```
 admins = { "admin@jitsimeetizan.duckdns.org" }
 ```
 
@@ -370,7 +370,7 @@ En este bloque agregaremos los administradores que deseemos.
 
 Reiniciamos los servidores de Jitsi:
 
-```bash
+```
 sudo systemctl restart prosody
 sudo systemctl restart jicofo
 sudo systemctl restart jitsi-videobridge2
@@ -380,7 +380,7 @@ sudo systemctl restart jitsi-videobridge2
 
 Para realizar los cambios que nos indica la práctica, tendremos que editar el siguiente archivo:
 
-```bash
+```
 sudo nano /usr/share/jitsi-meet/interface_config.js
 ```
 
@@ -390,7 +390,7 @@ sudo nano /usr/share/jitsi-meet/interface_config.js
 
 Dentro de ese archivo, buscamos la siguiente línea y la modificamos para establecer el título personalizado:
 
-```javascript
+```
 APP_NAME: 'Mi Jitsi Personalizado',
 ```
 
@@ -411,7 +411,7 @@ Buscar la clave `headerTitle` y cambiarla por el texto deseado.
 
 Ejemplo:
 
-```json
+```
 "headerTitle": "¡Bienvenido a Mi Jitsi!"
 ```
 
@@ -419,13 +419,13 @@ Ejemplo:
 
 Editamos el archivo de configuración:
 
-```bash
+```
 sudo nano /etc/jitsi/meet/jitsimeetizan.duckdns.org-config.js
 ```
 
 Dentro del bloque `var config`, agregamos:
 
-```javascript
+```
 var config = {
     disableChat: true,
     disableScreenSharing: true,
@@ -448,19 +448,11 @@ sudo nano crear_usuario.sh
 Dentro del archivo, agregamos:
 
 ```bash
-#!/bin/bash
-
 echo "Introduce el nombre del nuevo usuario:"
 read username
-
-# Generar contraseña aleatoria
 password=$(openssl rand -base64 12)
-
-# Crear usuario con la contraseña
 useradd -m -s /bin/bash "$username"
 echo "$username:$password" | chpasswd
-
-# Mostrar información
 echo "Usuario '$username' creado con contraseña: $password"
 ```
 
@@ -477,20 +469,10 @@ sudo nano backup_jitsi.sh
 Contenido del script:
 
 ```bash
-#!/bin/bash
-
-# Directorio de origen
 config_dir="/etc/jitsi"
-
-# Directorio de respaldo
 backup_dir="/backup/jitsi"
-
-# Fecha actual
 fecha=$(date '+%Y-%m-%d_%H-%M-%S')
-
-# Crear respaldo
 mkdir -p "$backup_dir"
 cp -r "$config_dir" "$backup_dir/jitsi_backup_$fecha"
-
 echo "Copia de seguridad guardada en $backup_dir/jitsi_backup_$fecha"
 ```
