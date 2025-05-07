@@ -254,6 +254,8 @@ ssl_certificate_key /etc/ssl/private/jitsi.key;
 
 ## 8. Reiniciar los servicios
 
+Reiniciamos los servicios de Jitsi Meet mediante los siguientes comandos:
+
 ```
 sudo systemctl reload nginx
 sudo systemctl restart prosody
@@ -281,7 +283,7 @@ VirtualHost "jitsimeetizan.duckdns.org"
     authentication = "internal_hashed"
 ```
 
-Añadimos el siguiente bloque al fichero que estamos editando para que el **inicio de sesión sea anónimo**:
+Añadimos el siguiente bloque al fichero que estamos editando para que el inicio de sesión sea **ANÓNIMO**:
 
 ```
 VirtualHost "guest.jitsimeetizan.duckdns.org"
@@ -293,13 +295,13 @@ VirtualHost "guest.jitsimeetizan.duckdns.org"
 
 ## Configuración de Jitsi Meet
 
-Entramos en el siguiente fichero:
+### Entramos en el siguiente fichero:
 
 ```
 sudo nano /etc/jitsi/meet/jitsimeetizan.duckdns.org-config.js
 ```
 
-Añadimos la parte de `anonymousdomain` en el fichero, en el bloque de `var config`:
+### Añadimos la parte de `anonymousdomain` en el fichero, en el bloque de `var config`:
 
 ```
 var config = {
