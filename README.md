@@ -118,7 +118,7 @@ sudo apt install apt-transport-https
 sudo add-apt-repository universe
 ```
 
-Y actualizamos nuevamente:
+### Y actualizamos nuevamente:
 
 ```
 sudo apt update
@@ -225,25 +225,25 @@ Cambiar los valores necesarios, como:
 
 ## 7. Configurar certificado SSL
 
-Ir al directorio de certificados:
+### Ir al directorio de certificados:
 
 ```
 cd /etc/ssl
 ```
 
-Crear certificado:
+### Crear certificado:
 
 ```
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/jitsi.key -out /etc/ssl/certs/jitsi.crt -subj "/CN=jitsimeetizan.duckdns.org"
 ```
 
-Editar la configuración de nginx (utilizo mi dominio como ejemplo):
+### Editar la configuración de nginx (utilizo mi dominio como ejemplo):
 
 ```
 sudo nano /etc/nginx/sites-available/jitsimeetizan.duckdns.org.conf
 ```
 
-Reemplazar estas líneas:
+### Reemplazar estas líneas:
 
 ```
 ssl_certificate /etc/ssl/certs/jitsi.crt;
@@ -260,6 +260,7 @@ sudo systemctl restart prosody
 sudo systemctl restart jicofo
 sudo systemctl restart jitsi-videobridge2
 ```
+---
 
 # AUTENTICACIÓN
 
