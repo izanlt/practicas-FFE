@@ -1,7 +1,7 @@
 
 # DOCUMENTACIÓN PROYECTO JITSI MEET
 
-## 1. Creación de máquinas virtuales
+## Creación de máquinas virtuales
 
 Antes de todo, debemos realizar la creación de las máquinas virtuales, que deben ser las siguientes:
 - Una máquina de Ubuntu Server en la versión 22.04.
@@ -10,7 +10,7 @@ Antes de todo, debemos realizar la creación de las máquinas virtuales, que deb
 
 ---
 
-## 2. Configuración de SSH en Ubuntu Server
+## Configuración de SSH en Ubuntu Server
 
 Dentro de la máquina virtual de Ubuntu Server, instalamos SSH con el siguiente comando:
 
@@ -21,7 +21,7 @@ sudo apt install openssh
 
 ---
 
-## 3. Configuración de IP estática
+## Configuración de IP estática
 
 ### En Ubuntu Server
 
@@ -98,7 +98,7 @@ sudo netplan apply
 
 ---
 
-## 4. Instalación del servidor Jitsi Meet
+## Instalación del servidor Jitsi Meet
 
 Primero debemmos actualizar el sistema:
 
@@ -179,7 +179,7 @@ Durante la instalación:
 
 ---
 
-## 5. Configurar direcciones IP en Jitsi
+## Configurar direcciones IP en Jitsi
 
 Editar el archivo de configuración `jvb.conf`:
 
@@ -209,7 +209,7 @@ ice4j {
 
 ---
 
-## 6. Configurar Jitsi para más de 100 participantes
+## Configurar Jitsi para más de 100 participantes
 
 Editar el archivo `/etc/systemd/system.conf`:
 
@@ -223,7 +223,7 @@ Cambiar los valores necesarios, como:
 
 ---
 
-## 7. Configurar certificado SSL
+## Configurar certificado SSL
 
 ### Ir al directorio de certificados:
 
@@ -252,7 +252,7 @@ ssl_certificate_key /etc/ssl/private/jitsi.key;
 
 ---
 
-## 8. Reiniciar los servicios
+## Reinicio de servicios
 
 Reiniciamos los servicios de Jitsi Meet mediante los siguientes comandos:
 
