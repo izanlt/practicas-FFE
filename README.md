@@ -295,13 +295,13 @@ VirtualHost "guest.jitsimeetizan.duckdns.org"
 
 ## Configuración de Jitsi Meet
 
-### Entramos en el siguiente fichero:
+Entramos en el siguiente fichero:
 
 ```
 sudo nano /etc/jitsi/meet/jitsimeetizan.duckdns.org-config.js
 ```
 
-### Añadimos la parte de `anonymousdomain` en el fichero, en el bloque de `var config`:
+Añadimos la parte de `anonymousdomain` en el fichero, en el bloque de `var config`:
 
 ```
 var config = {
@@ -317,13 +317,13 @@ var config = {
 
 ## Configuración de Jicofo
 
-Entramos en este archivo y le agregamos la siguiente línea:
+Entramos en el archivo de Jicofo para configurarlo:
 
 ```
 sudo nano /etc/jitsi/jicofo/jicofo.conf
 ```
 
-Agregamos lo siguiente:
+Agregamos las siguientes líneas, con el tipo XMPP:
 
 ```
 authentication: {
