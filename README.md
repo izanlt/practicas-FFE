@@ -100,25 +100,25 @@ sudo netplan apply
 
 ## 4. Instalación del servidor Jitsi Meet
 
-### Actualizar el sistema:
+Primero debemmos actualizar el sistema:
 
 ```
 sudo apt update && sudo apt upgrade
 ```
 
-### Verificar compatibilidad con repositorios HTTPS:
+Verificar compatibilidad con repositorios HTTPS:
 
 ```
 sudo apt install apt-transport-https
 ```
 
-### Añadimos el repositorio `universe`:
+Añadimos el repositorio `universe`:
 
 ```
 sudo add-apt-repository universe
 ```
 
-### Y actualizamos nuevamente:
+Y actualizamos nuevamente:
 
 ```
 sudo apt update
@@ -126,9 +126,9 @@ sudo apt update
 
 ---
 
-### Añadir repositorios:
+### Adición de repositorios:
 
-**Prosody:**
+Repositorio de **Prosody:**
 
 ```
 sudo curl -sL https://prosody.im/files/prosody-debian-packages.key -o /etc/apt/keyrings/prosody-debian-packages.key
@@ -136,14 +136,14 @@ echo "deb [signed-by=/etc/apt/keyrings/prosody-debian-packages.key] http://packa
 sudo apt install lua5.2
 ```
 
-**Para Jitsi:**
+Repositorio para **Jitsi:**
 
 ```
 curl -sL https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg'
 echo "deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/" | sudo tee /etc/apt/sources.list.d/jitsi-stable.list
 ```
 
-### Abrir puertos en el firewall:
+### Apertura de los puertos en el firewall:
 
 ```
 sudo ufw allow 80/tcp
