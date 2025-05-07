@@ -25,12 +25,13 @@ sudo apt install openssh
 
 ### En Ubuntu Server
 
-Editamos el archivo de configuración de red:
+Editamos el archivo de configuración de red para obtener internet en la máquina:
 
 ```
 sudo nano /etc/netplan/00-installer-config.yaml
 ```
-También se puede editar el archivo de configuración de red que existe en el directorio, que es el siguiente:
+También se puede editar el archivo de configuración de red que existe dentro de nuestra máquina, que es el siguiente:
+
 ```
 sudo nano /etc/netplan/50-cloud-init.yaml
 ```
@@ -48,7 +49,7 @@ network:
 version: 2
 ```
 
-Guardamos y aplicamos los cambios:
+Guardamos los cambios:
 
 ```
 sudo netplan apply
@@ -58,13 +59,13 @@ sudo netplan apply
 
 ### En Ubuntu Desktop
 
-Ejecutamos:
+Ejecutamos el siguiente comando y editamos el fichero:
 
 ```
 sudo nano /etc/netplan/01-network-manager-all.yaml
 ```
 
-Y escribimos la configuración de IP estática correspondiente. 
+En el fichero escribimos la configuración de IP estática correspondiente. 
 
 ```yaml
 network:
@@ -78,7 +79,7 @@ network:
         addresses: [8.8.8.8, 1.1.1.1]
 ```
 
-Para guardar los cambios de red aplicaremos el siguiente comando:
+Para guardar los cambios de red introduciremos el siguiente comando:
 
 ```
 sudo netplan apply
@@ -92,7 +93,7 @@ sudo netplan apply
 2. Vamos a **Redes e Internet** > **Centro de redes y recursos compartidos**.
 3. Seleccionamos **Cambiar configuración del adaptador**.
 4. Entramos en las propiedades del adaptador de red.
-5. Editamos el **Protocolo de Internet versión 4 (TCP/IPv4)**.
+5. Editamos el **Protocolo de Internet versión 4**.
 6. Introducimos la IP estática correspondiente.
 
 ---
@@ -111,7 +112,7 @@ sudo apt update && sudo apt upgrade
 sudo apt install apt-transport-https
 ```
 
-### Habilitar el repositorio `universe`:
+### Añadimos el repositorio `universe`:
 
 ```
 sudo add-apt-repository universe
@@ -142,13 +143,6 @@ curl -sL https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmo
 echo "deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/" | sudo tee /etc/apt/sources.list.d/jitsi-stable.list
 ```
 
-Y actualizaremos las fuentes de los paquetes:
-
-```
-sudo apt install
-```
----
-
 ### Abrir puertos en el firewall:
 
 ```
@@ -170,6 +164,8 @@ sudo ufw status verbose
 
 ### Instalar Jitsi Meet
 
+Para la instalación del servidor de Jitsi Meet debemos ejecutar el siguiente comando:
+
 ```
 sudo apt install jitsi-meet
 ```
@@ -179,7 +175,7 @@ Durante la instalación:
 - Introducir el dominio (por ejemplo: `jitsimeetizan.duckdns.org`).
 - Introducir correo electrónico.
 - También en algún momento nos pedirá el número de teléfono, pero **NO** es necesario.
-- En la parte del certificado, seleccionar la tercera opción (generar auto-firmado).
+- En la parte del certificado, seleccionar la tercera opción (generar un certificado autofirmado).
 
 ---
 
@@ -235,16 +231,16 @@ Ir al directorio de certificados:
 cd /etc/ssl
 ```
 
-Crear certificado autofirmado:
+Crear certificado:
 
 ```
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/jitsi.key -out /etc/ssl/certs/jitsi.crt -subj "/CN=jitsimeetizan.duckdns.org"
 ```
 
-Editar la configuración de nginx:
+Editar la configuración de nginx (utilizo mi dominio como ejemplo):
 
 ```
-sudo nano /etc/nginx/sites-available/tu-dominio.conf
+sudo nano /etc/nginx/sites-available/jitsimeetizan.duckdns.org.conf
 ```
 
 Reemplazar estas líneas:
