@@ -38,7 +38,7 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 
 Agregamos los datos necesarios para la IP estática (ejemplo):
 
-```yaml
+```
 network:
   ethernets:
     eth0:
@@ -67,7 +67,7 @@ sudo nano /etc/netplan/01-network-manager-all.yaml
 
 En el fichero escribimos la configuración de IP estática correspondiente. 
 
-```yaml
+```
 network:
   version: 2
   renderer: NetworkManager
