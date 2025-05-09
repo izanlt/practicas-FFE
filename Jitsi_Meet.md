@@ -521,3 +521,7 @@ mkdir -p "$backup_dir"
 cp -r "$config_dir" "$backup_dir/jitsi_backup_$fecha"
 echo "Copia de seguridad guardada en $backup_dir/jitsi_backup_$fecha"
 ```
+
+# Video de funcionamiento del servidor
+
+![video](/imagenes/video.mkv)
