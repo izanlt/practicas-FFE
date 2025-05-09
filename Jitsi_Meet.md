@@ -524,4 +524,4 @@ echo "Copia de seguridad guardada en $backup_dir/jitsi_backup_$fecha"
 
 # Video de funcionamiento del servidor
 
-![video](/imagenes/video.mkv)
+https://youtu.be/WpKnAyUT_ZY
