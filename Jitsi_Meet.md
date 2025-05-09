@@ -432,7 +432,27 @@ var config = {
     // ...
 };
 ```
-## Introducción de la imagen de Windows al SSH
+
+## Mensaje de bienevnida
+
+Ya que en el archivo `interface_config.js` no se me actualizaba el mensaje de bienvenida en el servidor, lo cambié en otro archivo:
+
+```
+sudo nano /usr/share/jitsi-meet/static/welcomePageAdditionalContent.html
+```
+
+En el archivo hay que introducirle el texto en lenguaje **HTML**, en mi caso le escribí lo siguiente:
+
+```
+<template id = "welcome-page-additional-content-template"></template>
+<div style="text-align:center;">
+    <h2>¡Bienvenido a Mi Jitsi!</h2>
+    <p>Por favor, espera a que el moderador inicie la reunión.</p>
+</div>
+
+```
+
+## Introducción de una imagen de Windows al SSH
 
 Para ejecutar este comando, primero debemos cerrar la sesión de nuestro servidor en el SSH.
 Después tendremos que introducir el siguiente comando:
