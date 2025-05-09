@@ -376,6 +376,9 @@ sudo systemctl restart jitsi-videobridge2
 ```
 ---
 
+
+# Personalización y Automatización en Jitsi Meet
+
 ## Personalización de la interfaz
 
 Para realizar los cambios que nos indica la práctica, tendremos que editar el siguiente archivo:
@@ -384,20 +387,15 @@ Para realizar los cambios que nos indica la práctica, tendremos que editar el s
 sudo nano /usr/share/jitsi-meet/interface_config.js
 ```
 
----
-
-### Cambio de título
+## Cambio de título
 
 Dentro de ese archivo, buscamos la siguiente línea y la modificamos para establecer el título personalizado:
 
 ```
-APP_NAME: 'Mi Jitsi Personalizado',
+APP_NAME: 'Mi Jitsi personalizado',
 ```
 
-Puedes cambiar `'Mi Jitsi Personalizado'` por el texto que desees mostrar como título en la interfaz del sitio.
-
-
-# Personalización y Automatización en Jitsi Meet
+Puedes cambiar `'Mi Jitsi personalizado'` por el texto que desees mostrar como título en la interfaz del sitio.
 
 ## Cambiar el título de la cabecera
 
@@ -412,7 +410,7 @@ Buscar la clave `headerTitle` y cambiarla por el texto que se desee.
 Ejemplo:
 
 ```
-"headerTitle": "¡Bienvenido a Mi Jitsi!"
+"headerTitle": "Bienvenido a mi Jitsi"
 ```
 
 ## Deshabilitar compartir pantalla y chat
