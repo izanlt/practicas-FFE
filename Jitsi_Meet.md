@@ -432,6 +432,33 @@ var config = {
     // ...
 };
 ```
+## Introducción de la imagen de Windows al SSH
+
+Para ejecutar este comando, primero debemos cerrar la sesión de nuestro servidor en el SSH.
+Después tendremos que introducir el siguiente comando:
+
+```
+scp "D:\\Users\\Alumno_m\\Downloads\\imagenes\\tu-imagen" usuario@tu-dominio:/usr/share/jitsi-meet/images/
+```
+
+Esto sirve para introducir una imagen de Windows a la carpeta de imágenes del servidor de Jitsi Meet, a través de la cuál se podrán editar los logos del mismo.
+En mi caso, la imagen estaba en una carpeta llamada imágenes dentro del directorio de Descargas.
+
+## Cambiar los logos del servidor Jitsi Meet
+
+Primero nos introducimos al archivo `interface_config.js`:
+
+```
+sudo nano /usr/share/jitsi-meet/interface_config.js
+```
+
+Posteriormente editaremos las siguientes opciones en las que introduciremos la ruta de la imagen de nuestro logo (puede ser en **PNG**)
+
+```
+DEFAULT_WELCOME_PAGE_LOGO_URL: 'images/tu-logo.png',
+DEFAULT_LOGO_URL: 'images/tu-logo.png',
+```
+La segunda línea que se debe cambiar, está comentada con //. Las // hay que suprimirlas e introducir nuestro logo
 
 ---
 
