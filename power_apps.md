@@ -16,3 +16,6 @@ Clic en Agregar datos > Buscamos "Excel (Empresa)" > Documentos > Documento de E
 Una vez hecho eso, agregamos las tablas.
 
 ![Captura valores 1](/imagenes/capexcel.jpg)
+
+## Creación del índice (Primera pantalla)
+Para la creación del índice tendremos que crear una pantalla en blanco con los botones que correspondan a los apartados a los que queramos ir.
