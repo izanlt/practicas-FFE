@@ -7,4 +7,9 @@ diferentes tablas que se irán insertando según la pantalla en la que nos situe
 En la aplicación tendremos pantallas que su función será redirigir al usuario, otras para crear o modificar empleados, entrevistas, eventos...
 o bien para eliminar los mismos.
 
+## Introducción de los datos a la aplicación
+Los datos se agregan mediante un docuemnto de Excel (en este caso), por lo que tendremos que hacer la creación de las tablas y la introducción de los datos en las mismas.
+Cuando tengamos el documento listo, en Powwer Apps tendremos que crear una aplicación a partir del Excel
+
+Para introducir los datos del Excel tendremos que hacer lo siguiente
 
