@@ -19,3 +19,9 @@ Una vez hecho eso, agregamos las tablas.
 
 ## Creación del índice (Primera pantalla)
 Para la creación del índice tendremos que crear una pantalla en blanco con los botones que correspondan a los apartados a los que queramos ir.
+En mi caso, el indice me quedó de esta manera:
+![Captura valores 1](/imagenes/indice.jpg)
+
+Para crear el redireccionamiento a las distintas pantallas, en el apartado de las fórmulas de cada botón escribiremos lo siguiente:
+
+
