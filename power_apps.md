@@ -11,5 +11,8 @@ o bien para eliminar los mismos.
 Los datos se agregan mediante un docuemnto de Excel (en este caso), por lo que tendremos que hacer la creación de las tablas y la introducción de los datos en las mismas.
 Cuando tengamos el documento listo, en Powwer Apps tendremos que crear una aplicación a partir del Excel
 
-Para introducir los datos del Excel tendremos que hacer lo siguiente
+Para introducir los datos del Excel tendremos que hacer lo siguiente:
+Clic en Agregar datos > Buscamos "Excel (Empresa)" > Documentos > Documento de Excel que deseemos.
+Una vez hecho eso, agregamos las tablas.
 
+![Captura valores 1](/imagenes/capexcel.jpg)
