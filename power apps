@@ -1,1 +1,4 @@
-as
+# DOCUMENTACIÓN PROYECTO POWER APPS
+
+## INTRODUCCIÓN
+Este proyecto trata de crear una aplicación en Power Apps para gestionar una empresa de recursos humanos. Los datos serán introducidos a través de un documento de Excel que tendrá diferentes tablas que se irán insertando según la pantalla en la que nos situemos.
