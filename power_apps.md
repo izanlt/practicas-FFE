@@ -33,6 +33,11 @@ Navigate(PantallaDeseada)
 
 ## Creación pantalla de creación, modificación y eliminar empleados (Segunda pantalla)
 
+El resultado de la pantalla es el siguiente:
+
+![image](https://github.com/user-attachments/assets/10ad716b-7a06-49fe-a4ab-7aafdbe3fc23)
+
+
 En cuanto a esta pantalla, crearemos una galería vertical para que se muestren los empleados que hay en la empresa de recursos humanos.
 La galería vertical la encontramos arriba a la izquierda en Insertar.
 
@@ -42,4 +47,43 @@ Le introducimos los datos de la tabla 1 ya que es la que recoge los datos de los
 Hacemos clic sobre nuestra galería y en la parte de Datos, podemos obtener el listado de empleados.
 
 ![image](https://github.com/user-attachments/assets/34090fd9-dc14-4189-8570-158443ece7d0)
+
+En la parte de la derecha de los botones, tenemos 3 que están alineados para realizar cambios en el listado de los empleados con una imagen icónica en cada uno.
+Para tener los redireccionamientos o vínculos dentro de la aplicación, la fórmula que tendremos que poner será la siguiente (ejemplo con el primer botón):
+
+```
+Navigate('Creacion de Empleados')
+```
+
+En cuanto a los botones de "Siguiente" y de "Volver al índice" utilizaremos la misma fórmula que arriba pero con diferentes pantallas.
+
+## Pantalla de creación de empleados
+En esta pantalla generaremos empleados en el listado de los mismos.
+Esta tiene incluida una tabla a la izquierda en la que nos aparecerán los empleados de la empresa, y a la izquierda, un formulario en el que rellenaremos los datos que se nos solicita.
+
+El resultado de esta pantalla es el siguiente:
+
+![image](https://github.com/user-attachments/assets/1498fc39-9a01-46fc-aabc-a01a921a3bb2)
+
+Arriba a la izquierda creé un cuadro, que se encuenta en parte de "Insertar" y seleccionamos la parte de "Multimedia" para insertar una imagen del ordenador
+
+![image](https://github.com/user-attachments/assets/bd5bda32-36c3-4d63-a937-1a4b4ec0610b)
+
+Para colocar la imagen que queramos, en la parte derecha, donde se encuentran las propiedades del elemento, podemos cargar una imagen para que aparezca en la aplicación.
+
+![image](https://github.com/user-attachments/assets/4a761a28-10cd-45df-8502-935272ce0d40)
+
+## Pantalla de observaciones
+
+Esta pantalla es parecida a la del listado de los empleados y el método de creación es similar.
+El resultado es el siguiente:
+
+![image](https://github.com/user-attachments/assets/649688cb-be87-4b16-be66-f25e1ecc39a5)
+
+En este caso solamente hay un botón para la creación de las observaciones.
+
+## Pantalla de creación de observaciones a los empleados
+
+En esta pantalla crearemos una tabla y un formulario en el que podemos crear observaciones a los distintos empleados de la empresa.
+
 
