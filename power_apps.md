@@ -31,3 +31,15 @@ Para crear el redireccionamiento a las distintas pantallas, en el apartado de la
 Navigate(PantallaDeseada)
 ```
 
+## Creación pantalla de creación, modificación y eliminar empleados (Segunda pantalla)
+
+En cuanto a esta pantalla, crearemos una galería vertical para que se muestren los empleados que hay en la empresa de recursos humanos.
+La galería vertical la encontramos arriba a la izquierda en Insertar.
+
+![image](https://github.com/user-attachments/assets/528fd158-9ad8-4af6-8021-a3563d7b9302)
+
+Le introducimos los datos de la tabla 1 ya que es la que recoge los datos de los empleados de nuestra empresa.
+Hacemos clic sobre nuestra galería y en la parte de Datos, podemos obtener el listado de empleados.
+
+![image](https://github.com/user-attachments/assets/34090fd9-dc14-4189-8570-158443ece7d0)
+
