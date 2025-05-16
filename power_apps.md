@@ -20,6 +20,7 @@ Una vez hecho eso, agregamos las tablas.
 ## Creación del índice (Primera pantalla)
 Para la creación del índice tendremos que crear una pantalla en blanco con los botones que correspondan a los apartados a los que queramos ir.
 Los botones están en la parte de Insertar arriba a la izquierda del menú de Power Apss.
+
 ![image](https://github.com/user-attachments/assets/ea9f36ff-9a78-4459-8491-90342a7f1b82)
 
 En mi caso, el indice me quedó de esta manera:
