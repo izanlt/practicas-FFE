@@ -1,4 +1,4 @@
-# DOCUMENTACIÓN PROYECTO POWER APPS
+    # DOCUMENTACIÓN PROYECTO POWER APPS
 
 ## INTRODUCCIÓN
 Este proyecto trata de crear una aplicación en Power Apps para gestionar una empresa de recursos humanos. Los datos serán introducidos a través de un documento de Excel que tendrá
@@ -78,12 +78,239 @@ Para colocar la imagen que queramos, en la parte derecha, donde se encuentran la
 Esta pantalla es parecida a la del listado de los empleados y el método de creación es similar.
 El resultado es el siguiente:
 
-![image](https://github.com/user-attachments/assets/649688cb-be87-4b16-be66-f25e1ecc39a5)
+![image](https://github.com/user-attachments/assets/6fb49859-fa50-48cb-83e9-c4582ee56e67)
+
 
 En este caso solamente hay un botón para la creación de las observaciones.
 
 ## Pantalla de creación de observaciones a los empleados
 
-En esta pantalla crearemos una tabla y un formulario en el que podemos crear observaciones a los distintos empleados de la empresa.
+En esta pantalla crearemos una tabla y un formulario en el que podemos crear y eliminar observaciones a los distintos empleados de la empresa.
+El código de las fórmulas que se introduce a los botones es el siguiente:
 
+Para el botón de eliminar una observación
+```
+If(
+    !IsBlank(Gallery7.Selected);
+    Remove(Tabla1; Gallery7.Selected);
+    Notify("Observacion eliminada correctamente"; NotificationType.Success)
+)
+```
+Para el botón de agregar una observación:
+```
+NewForm(Form3);; UpdateContext({ newMode: true })
+```
+
+El resultado de esta pantalla es el siguiente:
+
+![image](https://github.com/user-attachments/assets/13af9ffc-31b0-49e2-b54f-880c5c3b104a)
+
+En la parte de la izquierda de la pantalla creé una galería vertical para ver las observaciones sobre los empleados de la empresa, y por la parte del centro superior, los botones de crear y eliminar observación.
+
+## Pantalla de eventos
+
+En esta pantalla visualizaremos los eventos que tiene nuestra empresa, junto a los empleados involucrados en cada uno de los eventos.
+Además, podremos saber cual es el tipo de cada uno de los eventos que se realicen.
+
+El resultado de la pantalla de visualización de eventos es el siguiente:
+
+![image](https://github.com/user-attachments/assets/135358fa-7246-44ac-b5b1-afccc7c30ec2)
+
+
+Como se puede observar, hay un botón que dice "Crear/eliminar eventos" en el que nos redirige a una pantalla para poder realizar la creación o eliminación de eventos.
+
+## Pantalla de creación y eliminación de eventos
+
+Esta pantalla tiene una galería con el listado de los eventos que la empresa tiene planeados, y a la izquierda 2 botones, uno sirve para crear un evento, y el otro para eliminar.
+Las fórmulas que se le escribe a los botones es la siguiente.
+Botón de eliminación (la galería se llama "Gallery10"):
+```
+If(
+    !IsBlank(Gallery10.Selected);
+    Remove(Tabla4; Gallery10.Selected);
+    Notify("Evento eliminado correctamente"; NotificationType.Success)
+)
+```
+Botón de creación:
+```
+NewForm(Form3);; UpdateContext({ newMode: true })
+```
+
+Lo demás, son cambios como la foto del logotipo de la pantalla, o la foto de cada evento.
+El resultado es el siguiente:
+
+![image](https://github.com/user-attachments/assets/e0a587ed-4a13-46d2-81e9-4fc7c4452182)
+
+## Pantalla de entrevistas
+
+La creación de esta pantalla consta de una galería situada a la izquierda, teniendo un listado de todas las entrevistas creadas de la empresa.
+Los cambios realizados que la diferencian de las demás pantallas son las imágenes utilizadas
+
+![image](https://github.com/user-attachments/assets/e876f603-feb4-4e16-80f8-ba46e958ae1b)
+
+## Creación/Eliminación de entrevistas
+
+Esta pantalla está directamente conectada con la anterior por medio del botón que se visualiza en el centro de la pantalla anterior.
+Podemos realizar la creación y entrevistas por medio de los botones en la parte superior del centro, en los que solamente tendremos que seleccionar
+la entrevista que deseemos, y al hacer clic sobre el botón de eliminar, la entrevista desaparecerá.
+
+El código de cada botón es el mismo que el de los demás. pero cambiando el nombre de la galería y del formulario.
+El resultado es el siguiente:
+
+![image](https://github.com/user-attachments/assets/f86c0924-a551-4c6b-a25f-78afb732e4ef)
+
+## Pantalla de eliminar, dar de alta o baja a un empleado
+
+Esta pantalla está directamente conectada con la segunda (pantalla de empleados) en la que por medio del botón que dice "Dar de baja/alta"
+podemos acceder a esta.
+
+Esta pantalla consta de una galería vertical en la que se insertan los datos de la Tabla1 (tabla de los empleados en el Excel) para tener un listado de los mismos.
+A la derecha tenemos 3 botones, que todos funcionan de la misma manera: se selecciona el empleado que se desee y al hacer clic en el botón, se realiza la acción que corresponda.
+
+#### Primer botón (Eliminar):
+
+El botón de eliminar tiene el siguiente código en la fórmula para que ejecute la acción deseada:
+```
+If(
+    !IsBlank(Gallery1_1.Selected);
+    Remove(Tabla1; Gallery1_1.Selected);
+    Notify("Empleado eliminado correctamente"; NotificationType.Success)
+)
+```
+Pongo mi ejemplo, ya que la galería se llama Gallery1_1.
+
+#### Segundo botón (Dar de baja)
+
+La función de ese botón es cambiar el campo llamado "EnPlantilla", en el que al seleccionar un empleado y pulsar dicho botón, se cambia su valor a "No"
+
+![image](https://github.com/user-attachments/assets/d850d9ad-fdac-4a3a-85ff-f8078182905c)
+
+Debajo del nombre y apellidos dice "No", eso significa que no está en plantilla y por tanto el empleado está dado de baja.
+El código que necesita el botón es el siguiente:
+```
+If(
+    !IsBlank(Gallery1_1.Selected);
+    
+    Patch(
+        Tabla1;
+        Gallery1_1.Selected;
+        { EnPlantilla: "No" }
+    );
+
+    Patch(
+        Tabla2;
+        Defaults(Tabla2);
+        {
+            EmpleadoID: Gallery1_1.Selected.ID;
+            Tipo: "Evaluación de salida";
+            Fecha: Today();
+            Observaciones: "Evaluación realizada correctamente"
+        }
+    )
+)
+```
+
+#### Tercer botón (Dar de alta)
+
+Por el contrario al botón de antes, debemos tener un botón para dar de alta a un empleado después de la correspondiente entrevista que tenga.
+Si seleccionamos un empleado y presionamos el botón de "Dar de alta", debajo del nombre y apellidos del empleado pondrá "Si"
+ya que se habrá cambiado el valor del campo "EnPlantilla", configurádolo de manera que ese empleado está dado de alta.
+
+La fórmula que tiene el botón de dar de alta es la siguiente:
+```
+If(
+    !IsBlank(Gallery1_1.Selected);
+    
+    Patch(
+        Tabla1;
+        Gallery1_1.Selected;
+        { EnPlantilla: "Si" }
+    );
+
+    Patch(
+        Tabla2;
+        Defaults(Tabla2);
+        {
+            EmpleadoID: Gallery1_1.Selected.ID;
+            Tipo: "Evaluación de salida";
+            Fecha: Today();
+            Observaciones: "Evaluación realizada correctamente"
+        }
+    )
+)
+```
+
+---
+
+El resultado de esta pantalla es la siguiente
+
+![image](https://github.com/user-attachments/assets/68754020-2428-42b4-bddb-3e2b506fec69)
+
+## Pantalla de la ficha de cada empleado.
+
+Esta pantalla está vinculada con la de los empleados, ya que se necesita que se presione el siguiente botón:
+
+![image](https://github.com/user-attachments/assets/9dbdbcac-acc9-4d50-9cc3-24b0e2891040)
+
+El botón que se debe presionar es el que se parece a ">", de esta manera nos redirige a la pantalla de la ficha de cada empleado,
+que está formada por una foto de perfil predeterminada y diferentes botones con sus fórmulas.
+
+El resultado de la pantalla es el siguiente (con un ejemplo):
+
+![image](https://github.com/user-attachments/assets/da19aa71-1ab8-4cb7-948e-cfdbc1a3340f)
+
+Los botones tienen en las fórmulas lo siguiente:
+
+#### Botón nombre
+
+```
+empleadoSeleccionado.Nombre
+```
+
+#### Botón apellido
+
+```
+empleadoSeleccionado.Apellido
+```
+
+#### Botón teléfono
+
+```
+empleadoSeleccionado.telefono
+```
+
+#### Botón fecha de alta
+
+```
+empleadoSeleccionado.FechaIngreso
+```
+
+#### Botón "En plantilla"
+
+```
+empleadoSeleccionado.EnPlantilla
+```
+
+#### Botón volver
+
+```
+Back()
+```
+
+## Modificación de empleado
+
+En esta pantalla, podremos modificar los datos de cualquier empleado de la empresa, simplemente seleccionandolo.
+También está directamente conectada con la pantalla del listado de los empleados, por medio del botón correspondiente.
+
+El código del botón de editar es el siguiente:
+
+```
+UpdateContext({ editMode: true; selectedRecord: Table5.Selected })
+```
+
+El resultado de la página es el siguiente.
+
+![image](https://github.com/user-attachments/assets/9cd07509-d938-44e1-809a-4fcb963b1751)
+
+## Calendario de eventos
 
