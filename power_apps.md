@@ -19,6 +19,8 @@ Una vez hecho eso, agregamos las tablas.
 
 ![Captura valores 1](/imagenes/capexcel.jpg)
 
+---
+
 ## Creación del índice (Primera pantalla)
 
 Para la creación del índice tendremos que crear una pantalla en blanco con los botones que correspondan a los apartados a los que queramos ir.
@@ -50,6 +52,8 @@ Navigate(PantallaDeseada)
 
 Cada apartado tiene su respectivo botón con su correspondiente fórmula para que se realice el desplazamiento al campo que se desea.
 
+---
+
 ## Creación pantalla de creación, modificación y eliminar empleados (Segunda pantalla)
 
 El resultado de la pantalla es el siguiente:
@@ -76,6 +80,8 @@ Navigate('Creacion de Empleados')
 
 En cuanto a los botones de "Siguiente" y de "Volver al índice" utilizaremos la misma fórmula que arriba pero con diferentes pantallas.
 
+---
+
 ## Pantalla de creación de empleados
 En esta pantalla generaremos empleados en el listado de los mismos.
 Esta tiene incluida una tabla a la izquierda en la que nos aparecerán los empleados de la empresa, y a la izquierda, un formulario en el que rellenaremos los datos que se nos solicita.
@@ -91,6 +97,8 @@ Arriba a la izquierda creé un cuadro, que se encuenta en parte de "Insertar" y 
 Para colocar la imagen que queramos, en la parte derecha, donde se encuentran las propiedades del elemento, podemos cargar una imagen para que aparezca en la aplicación.
 
 ![image](https://github.com/user-attachments/assets/4a761a28-10cd-45df-8502-935272ce0d40)
+
+---
 
 ## Pantalla de observaciones
 
