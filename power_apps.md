@@ -421,7 +421,6 @@ Y en las propiedades debemos cambiar el diseño a `"Título"` y Ajustar recuento
 
 ![image](https://github.com/user-attachments/assets/60c8dfb1-bcd4-4ecc-866a-5563c6fba09d)
 
-
 #### Botón para ir al anterior mes
 
 Este botón sirve para desplazarnos en los meses del año, en el cuál cada vez que hagamos clic sobre él, nos llevará hacia el mes anterior.
@@ -445,4 +444,5 @@ Select(boton)
 
 El resultado del calendario es el siguiente:
 
-![image](https://github.com/user-attachments/assets/acfc3e60-47bc-453a-b6c1-af8d8cbf18c7)
+![image](https://github.com/user-attachments/assets/298a7d81-db9a-46d5-8863-c59456d22fca)
+
