@@ -285,9 +285,10 @@ El resultado de esta pantalla es la siguiente
 
 Esta pantalla está vinculada con la de los empleados, ya que se necesita que se presione el siguiente botón:
 
-![image](https://github.com/user-attachments/assets/9dbdbcac-acc9-4d50-9cc3-24b0e2891040)
+![image](https://github.com/user-attachments/assets/3df0be1b-7ff7-4fca-ba9d-0086ccd1e045)
 
-El botón que se debe presionar el botón de "Ver perfil", de esta manera nos redirige a la pantalla de la ficha de cada empleado,
+
+El botón que se debe presionar es el de "Ver perfil", de esta manera nos redirige a la pantalla de la ficha de cada empleado,
 que está formada por una foto de perfil predeterminada y diferentes botones con sus fórmulas.
 
 El resultado de la pantalla es el siguiente (con un ejemplo):
