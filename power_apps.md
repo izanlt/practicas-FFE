@@ -58,8 +58,7 @@ Cada apartado tiene su respectivo botón con su correspondiente fórmula para qu
 
 El resultado de la pantalla es el siguiente:
 
-![image](https://github.com/user-attachments/assets/10ad716b-7a06-49fe-a4ab-7aafdbe3fc23)
-
+![image](https://github.com/user-attachments/assets/6fe6ecbb-6439-4cc8-8403-98ad2e39ef14)
 
 En cuanto a esta pantalla, crearemos una galería vertical para que se muestren los empleados que hay en la empresa de recursos humanos.
 La galería vertical la encontramos arriba a la izquierda en Insertar.
@@ -288,7 +287,7 @@ Esta pantalla está vinculada con la de los empleados, ya que se necesita que se
 
 ![image](https://github.com/user-attachments/assets/9dbdbcac-acc9-4d50-9cc3-24b0e2891040)
 
-El botón que se debe presionar es el que se parece a ">", de esta manera nos redirige a la pantalla de la ficha de cada empleado,
+El botón que se debe presionar el botón de "Ver perfil", de esta manera nos redirige a la pantalla de la ficha de cada empleado,
 que está formada por una foto de perfil predeterminada y diferentes botones con sus fórmulas.
 
 El resultado de la pantalla es el siguiente (con un ejemplo):
