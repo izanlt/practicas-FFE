@@ -20,9 +20,17 @@ Una vez hecho eso, agregamos las tablas.
 ## Creación del índice (Primera pantalla)
 
 Para la creación del índice tendremos que crear una pantalla en blanco con los botones que correspondan a los apartados a los que queramos ir.
-Los botones están en la parte de Insertar arriba a la izquierda del menú de Power Apss.
+Los botones están en la parte de Insertar arriba a la izquierda del menú de Power Apps.
 
 ![image](https://github.com/user-attachments/assets/ea9f36ff-9a78-4459-8491-90342a7f1b82)
+
+Para introducir las imágenes, nos vamos al apartado de Insertar > Multimedia > Imagen, y la foto la cambiaremos en el menú de la derecha del recuadro de la foto
+
+![image](https://github.com/user-attachments/assets/79850be6-0142-4f80-a985-40565aa942b8)
+
+Y para las etiquetas, en el mismo apartado de Insertar, buscamos Etiqueta y así podremos introducir texto en los botones.
+
+![image](https://github.com/user-attachments/assets/222b3891-1301-4a65-ae11-2207f432e0ca)
 
 En mi caso, el inicio de la App me quedó de esta manera:
 
@@ -330,3 +338,18 @@ El resultado de la página es el siguiente.
 
 ## Calendario de eventos
 
+El calendario de la aplicación está conectado con la pantalla de los eventos mediante el Navigate del botón de dicha pantalla, y por el botón de volver del calendario.
+
+Primero que nada, para realizar el calendario, tendremos que irnos al apartado de App, en el menú de la izquierda.
+
+![image](https://github.com/user-attachments/assets/4a07aaa5-93de-4298-b0e3-85c38b1d3f3a)
+
+En el desplegable de arriba a la izquierda, tendremos que seleccionar OnStart
+
+![image](https://github.com/user-attachments/assets/af35b08a-e4d1-400e-9e28-6718be2150f3)
+
+Y en las fórmulas tendremos que introducir el siguiente código para crear las variables :
+```
+Set(var_mes; Month(Today()));;
+Set(var_año;Year(Today()))
+```
