@@ -437,3 +437,7 @@ Set(var_mes;var_mes+1);;
 If(var_mes>12;Set(var_mes;1);;Set(var_año;var_año+1));;
 Select(boton)
 ```
+
+El resultado del calendario es el siguiente:
+
+![image](https://github.com/user-attachments/assets/acfc3e60-47bc-453a-b6c1-af8d8cbf18c7)
