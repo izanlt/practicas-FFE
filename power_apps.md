@@ -348,8 +348,74 @@ En el desplegable de arriba a la izquierda, tendremos que seleccionar OnStart
 
 ![image](https://github.com/user-attachments/assets/af35b08a-e4d1-400e-9e28-6718be2150f3)
 
-Y en las fórmulas tendremos que introducir el siguiente código para crear las variables :
+Y en las fórmulas tendremos que introducir el siguiente código para crear las variables `var_mes` y `var_año`:
 ```
 Set(var_mes; Month(Today()));;
 Set(var_año;Year(Today()))
+```
+
+#### Botón para el mes
+
+Para colocar un cuadro de texto o un botón en el que nos aparezca el mes, tendremos que escribir el siguiente código:
+
+```
+Text(Date(var_año;var_mes;1); "mmmm")
+```
+
+#### Botón para el año
+
+En cuanto al botón o etiqueta de texto en la que se recoja el año que corresponde, tendremos que escribir el siguiente código:
+
+```
+var_año
+```
+
+#### Botón para que se introduzcan los días del mes en una galería 
+
+El calendario tendrá un botón que nos permitirá que el funcionamiento sea correcto, y el código que le introduciremos es el siguiente en el apartado OnSelect:
+
+``` 
+Set(var_primerdiames;Date(var_año;var_mes;1));;
+Set(var_ultimodiames;Date(var_año;var_mes+1;0));;
+Set(var_ultimodiamesanterior;var_primerdiames-1);;
+Set(var_primerdiasemana;If(Weekday(var_primerdiames)-1=0;7;Weekday(var_primerdiames)-1));;
+Set(var_primerdiaanteriormes;Day(var_ultimodiamesanterior-var_primerdiasemana+2));;
+Set(var_ultimodiasemana;If(Weekday(var_ultimodiames)-1=0;7;Weekday(var_ultimodiames)-1));;
+
+Clear(coll_mes);;
+If(var_primerdiasemana<>1; ForAll(Sequence(Day(var_ultimodiamesanterior)-var_primerdiaanteriormes+1;var_primerdiaanteriormes);
+Collect(coll_mes;{Value:Value;delmes: false })));;
+ForAll(Sequence(Day(var_ultimodiames));
+Collect(coll_mes;{Value:Value;delmes:true}));;
+ForAll(Sequence(7-var_ultimodiasemana);
+Collect(coll_mes;{Value:Value;delmes:false}));;
+```
+
+#### Galería del calendario
+
+Para que se vean los días del mes, necesitamos tener una galería a la que le introduciremos la siguiente fórmula en el apartado de Items:
+
+```
+coll_mes
+```
+
+#### Botón para ir al anterior mes
+
+Este botón sirve para desplazarnos en los meses del año, en el cuál cada vez que hagamos clic sobre él, nos llevará hacia el mes anterior.
+El código que debemos introducirle, en el apartado de OnSelect, es el siguiente:
+
+```
+Set(var_mes;var_mes-1);;
+If(var_mes>1;Set(var_mes;12);;Set(var_año;var_año-1));;
+Select(boton)
+```
+
+#### Botón para desplazarse al siguiente mes
+
+Cada vez que hagamos clic sobre este botón nos llevará al siguiente mes, en el apartado de OnSelect, escribiremos la siguiente fórmula:
+
+```
+Set(var_mes;var_mes+1);;
+If(var_mes>12;Set(var_mes;1);;Set(var_año;var_año+1));;
+Select(boton)
 ```
