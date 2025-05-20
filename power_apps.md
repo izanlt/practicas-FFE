@@ -417,6 +417,11 @@ Para que se vean los días del mes, necesitamos tener una galería a la que le i
 coll_mes
 ```
 
+Y en las propiedades debemos cambiar el diseño a `"Título"` y Ajustar recuento a 7
+
+![image](https://github.com/user-attachments/assets/60c8dfb1-bcd4-4ecc-866a-5563c6fba09d)
+
+
 #### Botón para ir al anterior mes
 
 Este botón sirve para desplazarnos en los meses del año, en el cuál cada vez que hagamos clic sobre él, nos llevará hacia el mes anterior.
