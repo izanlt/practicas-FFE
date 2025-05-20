@@ -1,4 +1,4 @@
-    # DOCUMENTACIÓN PROYECTO POWER APPS
+# DOCUMENTACIÓN PROYECTO POWER APPS
 
 ## INTRODUCCIÓN
 - Este proyecto trata de crear una aplicación en Power Apps para gestionar una empresa de recursos humanos. Los datos serán introducidos a través de un documento de Excel que tendrá
@@ -7,8 +7,10 @@ diferentes tablas que se irán insertando según la pantalla en la que nos situe
 - En la aplicación tendremos pantallas que su función será redirigir al usuario, otras para crear o modificar empleados, entrevistas, eventos...
 o bien para eliminar los mismos.
 
+---
+
 ## Introducción de los datos a la aplicación
-Los datos se agregan mediante un docuemnto de Excel (en este caso), por lo que tendremos que hacer la creación de las tablas y la introducción de los datos en las mismas.
+Los datos se agregan mediante un docuemnto de `Excel` (en este caso), por lo que tendremos que hacer la creación de las tablas y la introducción de los datos en las mismas.
 Cuando tengamos el documento listo, en Powwer Apps tendremos que crear una aplicación a partir del Excel
 
 Para introducir los datos del Excel tendremos que hacer lo siguiente:
@@ -100,6 +102,8 @@ El resultado es el siguiente:
 
 En este caso solamente hay un botón para la creación de las observaciones.
 
+---
+
 ## Pantalla de creación de observaciones a los empleados
 
 En esta pantalla crearemos una tabla y un formulario en el que podemos crear y eliminar observaciones a los distintos empleados de la empresa.
@@ -124,6 +128,8 @@ El resultado de esta pantalla es el siguiente:
 
 En la parte de la izquierda de la pantalla creé una galería vertical para ver las observaciones sobre los empleados de la empresa, y por la parte del centro superior, los botones de crear y eliminar observación.
 
+---
+
 ## Pantalla de eventos
 
 En esta pantalla visualizaremos los eventos que tiene nuestra empresa, junto a los empleados involucrados en cada uno de los eventos.
@@ -136,6 +142,8 @@ El resultado de la pantalla de visualización de eventos es el siguiente:
 
 Como se puede observar, hay un botón que dice "Crear/eliminar eventos" en el que nos redirige a una pantalla para poder realizar la creación o eliminación de eventos.
 Justo al lado, tenemos otro botón que nos lleva a un calendario en el que se recogen los distintos eventos.
+
+---
 
 ## Pantalla de creación y eliminación de eventos
 
@@ -183,7 +191,7 @@ Esta pantalla está directamente conectada con la segunda (pantalla de empleados
 podemos acceder a esta.
 
 Esta pantalla consta de una galería vertical en la que se insertan los datos de la Tabla1 (tabla de los empleados en el Excel) para tener un listado de los mismos.
-A la derecha tenemos 3 botones, que todos funcionan de la misma manera: se selecciona el empleado que se desee y al hacer clic en el botón, se realiza la acción que corresponda.
+A la derecha tenemos **3** botones, que todos funcionan de la misma manera: se selecciona el empleado que se desee y al hacer clic en el botón, se realiza la acción que corresponda.
 
 #### Primer botón (Eliminar):
 
@@ -263,6 +271,8 @@ If(
 El resultado de esta pantalla es la siguiente
 
 ![image](https://github.com/user-attachments/assets/68754020-2428-42b4-bddb-3e2b506fec69)
+
+---
 
 ## Pantalla de la ficha de cada empleado.
 
