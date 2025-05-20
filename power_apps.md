@@ -18,18 +18,27 @@ Una vez hecho eso, agregamos las tablas.
 ![Captura valores 1](/imagenes/capexcel.jpg)
 
 ## Creación del índice (Primera pantalla)
+
 Para la creación del índice tendremos que crear una pantalla en blanco con los botones que correspondan a los apartados a los que queramos ir.
 Los botones están en la parte de Insertar arriba a la izquierda del menú de Power Apss.
 
 ![image](https://github.com/user-attachments/assets/ea9f36ff-9a78-4459-8491-90342a7f1b82)
 
-En mi caso, el indice me quedó de esta manera:
-![Captura valores 1](/imagenes/indice.jpg)
+En mi caso, el inicio de la App me quedó de esta manera:
+
+![image](https://github.com/user-attachments/assets/f87bdd5b-1b94-441f-b11f-47c31aa95260)
+
+En cuanto al borde de los botones, debemos seleccionar un botón y en las propiedades irnos hacia abajo del todo, y cambiaremos lo siguiente:
+
+![image](https://github.com/user-attachments/assets/8d214873-318e-4060-a467-1eea43055c59)
+
 
 Para crear el redireccionamiento a las distintas pantallas, en el apartado de las fórmulas de cada botón escribiremos lo siguiente:
 ```
 Navigate(PantallaDeseada)
 ```
+
+Cada apartado tiene su respectivo botón con su correspondiente fórmula para que se realice el desplazamiento al campo que se desea.
 
 ## Creación pantalla de creación, modificación y eliminar empleados (Segunda pantalla)
 
@@ -114,10 +123,11 @@ Además, podremos saber cual es el tipo de cada uno de los eventos que se realic
 
 El resultado de la pantalla de visualización de eventos es el siguiente:
 
-![image](https://github.com/user-attachments/assets/135358fa-7246-44ac-b5b1-afccc7c30ec2)
+![image](https://github.com/user-attachments/assets/80d12af5-ed7b-4231-91c2-b6e1bcf1b60d)
 
 
 Como se puede observar, hay un botón que dice "Crear/eliminar eventos" en el que nos redirige a una pantalla para poder realizar la creación o eliminación de eventos.
+Justo al lado, tenemos otro botón que nos lleva a un calendario en el que se recogen los distintos eventos.
 
 ## Pantalla de creación y eliminación de eventos
 
@@ -257,7 +267,8 @@ que está formada por una foto de perfil predeterminada y diferentes botones con
 
 El resultado de la pantalla es el siguiente (con un ejemplo):
 
-![image](https://github.com/user-attachments/assets/da19aa71-1ab8-4cb7-948e-cfdbc1a3340f)
+![image](https://github.com/user-attachments/assets/ad7f2592-f547-40a6-b969-e17ff7bbe95f)
+
 
 Los botones tienen en las fórmulas lo siguiente:
 
@@ -289,6 +300,11 @@ empleadoSeleccionado.FechaIngreso
 
 ```
 empleadoSeleccionado.EnPlantilla
+```
+
+#### Botón de email
+```
+✉empleadoSeleccionado.email
 ```
 
 #### Botón volver
