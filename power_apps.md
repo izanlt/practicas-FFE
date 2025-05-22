@@ -446,3 +446,6 @@ El resultado del calendario es el siguiente:
 
 ![image](https://github.com/user-attachments/assets/298a7d81-db9a-46d5-8863-c59456d22fca)
 
+### LINK APLICACIÓN
+
+https://apps.powerapps.com/play/e/default-669222ee-d5e5-4539-987e-a3015ab6df31/a/81ccbd3b-974f-49a6-8df5-76aa6a2e4744?tenantId=669222ee-d5e5-4539-987e-a3015ab6df31&hint=240563fd-aac9-4eda-b08a-66f73a7b5501&sourcetime=1747900783933
