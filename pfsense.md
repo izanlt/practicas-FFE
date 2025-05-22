@@ -31,3 +31,26 @@
 ![image](https://github.com/user-attachments/assets/926e3fb4-0194-4b10-9c86-63e10a481376)
 ![image](https://github.com/user-attachments/assets/f1fbe1d5-82dc-4879-8aca-48a5d5a74110)
 ![image](https://github.com/user-attachments/assets/4e521f6c-9370-4b6c-bc0e-979164e8cb7f)
+
+# CREACIÓN DE REGLAS
+
+## Regla NAT
+
+![image](https://github.com/user-attachments/assets/ab13e0ec-a252-40ee-832f-73cdb2546d92)
+![image](https://github.com/user-attachments/assets/f4ea5d0e-3633-4720-989f-ab435b607e44)
+![image](https://github.com/user-attachments/assets/98d3fee1-0610-4e5c-b3da-747fd1e99dee)
+![image](https://github.com/user-attachments/assets/8591230c-1af7-4d89-bd95-c42e5a0f81a3)
+![image](https://github.com/user-attachments/assets/f79cdbfd-7bdf-45a0-bda6-46b576586ae0)
+![image](https://github.com/user-attachments/assets/423d9913-5907-458f-812d-80ab0d4abbf3)
+
+## Regla SSH
+
+![image](https://github.com/user-attachments/assets/1827f644-0521-4f41-bed7-45067dd7ce16)
+![image](https://github.com/user-attachments/assets/4711db3c-3240-448b-9fbf-f3a2f53c9317)
+
+## Regla para bloquear el acceso SSH al servidor web desde cualquier sitio
+
+![image](https://github.com/user-attachments/assets/2ccd6f8f-b88f-47a7-9158-46587af71d4c)
+![image](https://github.com/user-attachments/assets/ff7b4f5b-e8ea-47d1-84d3-452dc7d27149)
+![image](https://github.com/user-attachments/assets/ca3c25e0-6b91-4b11-bb54-2cf4729ff572)
+![image](https://github.com/user-attachments/assets/75c58917-4317-43fe-bd17-38091157d27f)
