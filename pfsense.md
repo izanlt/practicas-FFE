@@ -54,3 +54,9 @@
 ![image](https://github.com/user-attachments/assets/ff7b4f5b-e8ea-47d1-84d3-452dc7d27149)
 ![image](https://github.com/user-attachments/assets/ca3c25e0-6b91-4b11-bb54-2cf4729ff572)
 ![image](https://github.com/user-attachments/assets/75c58917-4317-43fe-bd17-38091157d27f)
+
+## Regla para dejar pasar a la ip de nuestro equipo
+
+![image](https://github.com/user-attachments/assets/33cafac3-7cf6-4a43-8013-278195f8b932)
+![image](https://github.com/user-attachments/assets/bd7b9425-531f-41b9-8e4d-66dc01246357)
+![image](https://github.com/user-attachments/assets/19436953-b1f0-4a31-9cb5-ab481435fd0a)
