@@ -48,6 +48,13 @@
 ![image](https://github.com/user-attachments/assets/1827f644-0521-4f41-bed7-45067dd7ce16)
 ![image](https://github.com/user-attachments/assets/4711db3c-3240-448b-9fbf-f3a2f53c9317)
 
+Escribimos en la terminal de la máquina Kubuntu el siguiente comando 
+
+´´´
+ssh estudiante@192.168.10.2
+´´´
+
+
 ## Regla para bloquear el acceso SSH al servidor web desde cualquier sitio
 
 ![image](https://github.com/user-attachments/assets/2ccd6f8f-b88f-47a7-9158-46587af71d4c)
@@ -60,3 +67,40 @@
 ![image](https://github.com/user-attachments/assets/33cafac3-7cf6-4a43-8013-278195f8b932)
 ![image](https://github.com/user-attachments/assets/bd7b9425-531f-41b9-8e4d-66dc01246357)
 ![image](https://github.com/user-attachments/assets/19436953-b1f0-4a31-9cb5-ab481435fd0a)
+
+En la terminal del Kubuntu escribimos lo siguiente
+
+´´´
+ssh estudiante@192.168.20.100
+´´´
+Y nos sale lo siguiente
+
+![image](https://github.com/user-attachments/assets/86aa1d58-f62e-49fd-aa77-0dbe0e753ba7)
+
+Esto significa que estamos en el servidor web desde el SSH.
+
+# TAREAS OPCIONALES
+
+## Regla de Firewall para tener acceso al servidor web solo de 8:00 a 20:00
+
+Entramos en el apartado de Firewall y seleccionamos Schedules.
+![image](https://github.com/user-attachments/assets/1824d358-d99d-4dbe-9e0b-df3b934a270d)
+
+Hacemos clic en Add para añadir el horario.
+![image](https://github.com/user-attachments/assets/431e5eff-b2ed-4dc6-b3c0-8567a359b408)
+
+Primero introducimos el nombre que deseemos del horario junto a su descripción.
+![image](https://github.com/user-attachments/assets/ef9c2527-fcab-4c86-82ea-31e03be15893)
+
+
+Seleccionamos lo que queda del mes de mayo para realizar la regla
+![image](https://github.com/user-attachments/assets/7e0fe8d3-7fea-4bcf-a381-298b28cde7b7)
+
+Justamente debajo del calendario que nos da el PfSense, encontramos un campo para establecer las horas.
+![image](https://github.com/user-attachments/assets/23ea240c-4460-4eaa-91f4-7251c1180460)
+
+Aquí confirmamos que nuestro horario está bien configurado y lo guardamos
+![image](https://github.com/user-attachments/assets/5b60eb48-6798-4efe-9ed1-50a2aaffb71e)
+
+Confirmamos que se nos ha guardado después de hacer clic sobre el botón de "Save"
+![image](https://github.com/user-attachments/assets/29fcb411-b8b1-494e-b266-139635c4c7a5)
