@@ -86,21 +86,53 @@ La primera pantalla que nos aparece es la siguiente:
 
 ![image](https://github.com/user-attachments/assets/309127e4-a616-430a-9f2a-00a30bc59242)
 
+En los siguientes pasos tenemos que aceptar todo:
 
 ![image](https://github.com/user-attachments/assets/efc9deb3-a210-43ac-8fd8-cc9135d84b65)
 ![image](https://github.com/user-attachments/assets/942f67bc-84b1-4063-a9e3-0c83e9a22e24)
 ![image](https://github.com/user-attachments/assets/f52cd541-a858-47c3-ac9e-2c3938f66e1f)
 ![image](https://github.com/user-attachments/assets/0a1e5ac1-f5c4-4dce-9fa1-fe9b8517e025)
+
+Hasta esta, en la que debemos seleccionar el disco en el que queremos que se nos instale el pfSense.
+
 ![image](https://github.com/user-attachments/assets/6e0c25ef-94d1-44b2-bd83-776eb6c704eb)
+
+Aceptamos y simplemente debemos esperar a que se instale y posteriormente reiniciar.
+
 ![image](https://github.com/user-attachments/assets/dfbc2781-c909-43cd-bcae-0a28c513151d)
 ![image](https://github.com/user-attachments/assets/30af8e72-5dcb-4bed-a87c-e9af83e9c1d6)
 ![image](https://github.com/user-attachments/assets/a1119176-f433-4bd0-b90a-af0576e21b1f)
+
+Dentrod el servidor tenemos que seguir los pasos que nos indican las capturas de la práctica.
+
 ![image](https://github.com/user-attachments/assets/89c04d7d-8b9b-46c6-b4a8-bd0305f4c2bc)
+
+Escribimos 2 para asignar las interfaces.
+Volvemos a escribir 2 para configurar la interfaz LAN y le decimos que no queremos que se configure la LAN con DHCP, ya que queremos establecer nuestra IP (192.168.10.1)
+
 ![image](https://github.com/user-attachments/assets/794ec1f2-26cf-48ff-bee5-c65e3fd46070)
-![image](https://github.com/user-attachments/assets/743fc318-28de-4ffd-ae89-389a392d4f17)
+
+Le establecemos la máscara de subred 255.255.255.0 y le decimos que no queremos comfigurar la IPv6 de la LAN con DHCP6.
+Posteriormente le decimos que queremos activar el server DHCP en la LAN para establecerle un rango que será de la IP 192.168.10.100 a la 192.168.10.200.
+Finalmente diremos que no queremos vovler a utilizar el HTTP como protocolo de la web.
+
+![image](https://github.com/user-attachments/assets/b14471ef-d917-4d49-b75d-e227d52f4d59)
+
+Y tendremos el servidor creado.
+
 ![image](https://github.com/user-attachments/assets/b1e8a8a3-b39e-4950-8ea0-37d5dcb1087a)
+
+Dentro de la máquina de Kubuntu introducimos la ip del servidor en el bsucador y nos llevará a la siguiente página:
+
 ![image](https://github.com/user-attachments/assets/a2977d60-226e-46a9-a31c-f7bd3a2bc4ea)
+
+Escribimos el nombre de usuario: **admin**
+Y en cuanto a la contraseña, si es la predeterminada, será: **pfsense**
+
 ![image](https://github.com/user-attachments/assets/43453937-1a18-4bbd-a31b-9ec0abe8f5d2)
+
+
+
 ![image](https://github.com/user-attachments/assets/0c2cd9c7-ea39-483d-b9ca-d343bf45f0e9)
 ![image](https://github.com/user-attachments/assets/c5a101d3-62d1-4ea3-9d92-82a272fe3dba)
 ![image](https://github.com/user-attachments/assets/636ca6f2-1d44-4624-bd78-9a2e827e4f8a)
