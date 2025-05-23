@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/51a477d5-4865-4634-a976-26b0baf5ed3b)![image](https://github.com/user-attachments/assets/fe7fb02f-9559-4257-932f-4947319a5a8a)
+
 # DOCUMENTACIÓN PROYECTO PFSENSE
 
 ## Creación de la máquina virtual de pfSense
