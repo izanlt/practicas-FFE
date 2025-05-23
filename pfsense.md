@@ -70,9 +70,10 @@ ssh estudiante@192.168.10.2
 
 En la terminal del Kubuntu escribimos lo siguiente
 
-´´´
+```
 ssh estudiante@192.168.20.100
-´´´
+```
+
 Y nos sale lo siguiente
 
 ![image](https://github.com/user-attachments/assets/86aa1d58-f62e-49fd-aa77-0dbe0e753ba7)
@@ -82,6 +83,8 @@ Esto significa que estamos en el servidor web desde el SSH.
 # TAREAS OPCIONALES
 
 ## Regla de Firewall para tener acceso al servidor web solo de 8:00 a 20:00
+
+### Creación horario
 
 Entramos en el apartado de Firewall y seleccionamos Schedules.
 ![image](https://github.com/user-attachments/assets/1824d358-d99d-4dbe-9e0b-df3b934a270d)
@@ -104,3 +107,64 @@ Aquí confirmamos que nuestro horario está bien configurado y lo guardamos
 
 Confirmamos que se nos ha guardado después de hacer clic sobre el botón de "Save"
 ![image](https://github.com/user-attachments/assets/29fcb411-b8b1-494e-b266-139635c4c7a5)
+
+### Creación regla con el horario
+
+Una vez tenemos creado el horario para bloquear el acceso al servidor web, procedemos a crear la regla que nos permita hacer ese bloqueo.
+Nos dirigimos a `Firewall > Rules > DMZ` y hacemos clic en Add, para añadir dicha regla.
+
+
+![image](https://github.com/user-attachments/assets/6c0ac2f2-08de-4c53-b1a8-a1616391817e)
+
+Visualizamos las opciones avanzadas para ver la opción de Schedule, en la que introduciremos el horario que creamos anteriormente.
+
+![image](https://github.com/user-attachments/assets/7b6e3718-d8b7-4f2d-823e-02fd5508f9b5)
+
+Y ahora le introducimos la descripción que deseemos.
+
+![image](https://github.com/user-attachments/assets/ada1aa5a-c615-4371-a759-169c086987a0)
+
+Para verificarlo, en la siguiente imagen se puede apreciar que la hora pertenece al rango de horas entre las 8:00 y las 20:00, por lo tanto me deja acceder al servidor web
+
+![image](https://github.com/user-attachments/assets/3e0881ce-511a-48fd-97f5-d4c80b272575)
+
+---
+
+## CARP (Common Address Redundancy Protocol)
+
+El CARP es un protocolo  de red que permite que varios hosts de la misma red compartan una única dirección IP. 
+Esto se utiliza principalmente para proporcionar alta disponibilidad, lo que significa que si un host falla, los demás pueden tomar el control sin interrumpir los servicios de red.
+
+En cuanto al pfSense permite que dos o más firewalls pfSense compartan una IP virtual (VIP) y así proporcionen alta disponibilidad. Si el firewall maestro falla, el secundario asume automáticamente el control de la red usando esa misma IP virtual.
+
+### Requisitos 
+
+#### Dos dispositivos pfSense
+
+Dos dispositivos en los que esté instalado el pfSense independientemente en máquinas virtuales.
+Deben esar configurados en 2 interfaces de red diferentes:
+- Uno para LAN
+- Otra para WAN
+
+#### Direcciones IP 
+
+Para cada interfaz se necesitan las siguientes IPs:
+- Para el nodo maestro (Firewall principal)
+- Para el nodo secundario (Firewall secundario)
+- IP Virtual
+
+#### Sincronización entre los sistemas
+
+- Dentro del nodo maestro de pfSense (Firewall principal), debe tener acceso a `System > High Availability`
+- Y se debe configurar la IP del nodo secundario (Firewall secundario), junto al usuario y contraseña
+- Activar sincronización de reglas
+
+#### Red 
+
+- La WAN y la LAN deben estar conectadas a ambos sistemas pfSense. 
+- La dirección IP virtual debe estar en el mismo segmento de red que la dirección IP del sistema principal. 
+- Los sistemas deben estar en la misma subred para la monitorización de CARP.
+
+#### Versiones de pfSense
+
+Es fundamental que ambas máquinas tengan la misma versión de pfSense instalada para que no den errores.
