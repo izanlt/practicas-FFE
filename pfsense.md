@@ -126,62 +126,162 @@ Dentro de la máquina de Kubuntu introducimos la ip del servidor en el bsucador 
 
 ![image](https://github.com/user-attachments/assets/a2977d60-226e-46a9-a31c-f7bd3a2bc4ea)
 
-Escribimos el nombre de usuario: **admin**
+Escribimos el nombre de usuario: **admin**.
 Y en cuanto a la contraseña, si es la predeterminada, será: **pfsense**
 
 ![image](https://github.com/user-attachments/assets/43453937-1a18-4bbd-a31b-9ec0abe8f5d2)
 
-
+Una vez dentro de pfSense, nos introduciremos nos dirigimos a Interfaces > Assignments y añadiremos la interfaz OPT1.
 
 ![image](https://github.com/user-attachments/assets/0c2cd9c7-ea39-483d-b9ca-d343bf45f0e9)
+
+Hacemos clic sobre "Save" para que se guarden los cambios.
+
 ![image](https://github.com/user-attachments/assets/c5a101d3-62d1-4ea3-9d92-82a272fe3dba)
+
+Ahora nos dirigiremos al apartado de Interfaces > OPT1 para configurarlo
+
 ![image](https://github.com/user-attachments/assets/636ca6f2-1d44-4624-bd78-9a2e827e4f8a)
-![image](https://github.com/user-attachments/assets/6b8921d8-f149-40ef-8a09-39954e8c4bbb)
-![image](https://github.com/user-attachments/assets/0965891c-714c-4c15-be44-d47f09402cba)
+
+En el apartado de "IPv4 Configuration Type" desconfiguramos el None y seleccionamos Static IPv4, además de activar la 
+checkbox de Enable interface.
+
+![image](https://github.com/user-attachments/assets/03469770-fac6-428c-8f62-afcb4ddc1d29)
+
+En la sección de Static IPv4 Configuration en el cuadro de texto de IPv4 Address pondremos la de la interfaz DMZ 
+(192.168.20.1). Además, justo a la derecha nos encontramos con un desplegable de números, seleccionaremos el 24 (por la 
+máscara de subred).
+
+![image](https://github.com/user-attachments/assets/fa98618f-863a-4b47-b2e0-15cd6fe96a36)
+
+Y guardamos para que los cambios se ejecuten.
+
 ![image](https://github.com/user-attachments/assets/df856976-a82c-432e-9c4d-979ea5aa0c5e)
+
+Ahora nos iremos a la parte de DHCP Server (Services > DHCP Server)
+
 ![image](https://github.com/user-attachments/assets/35ba137a-c368-4cfb-b20e-49de64fe6534)
+
+Configuramos la LAN, en la que activaremos el server DHCP para dicha interfaz.
+En el desplegable de Deny Unknown Clients seleccionamos "Allow all clients"
+
 ![image](https://github.com/user-attachments/assets/8aa40d2f-b94e-48ec-b35a-8468278471fb)
+
+Posteriormente, seguiremos la ruta de System > Advanced, que se encuentra en la parte superior de nuestra pantalla
+
+![image](https://github.com/user-attachments/assets/1f6c6fb6-97f6-4055-9979-358d1d3f6a6c)
+
+Dentro de los ajustes avanzados del sistema, nos posicionaremos en la parte de Networking.
+
 ![image](https://github.com/user-attachments/assets/160b5fda-5f12-4601-ba4c-72211adab122)
+
+En las opciones de DHCP, en cuanto al Server Backend seleccionamos el Kea DHCP.
+
 ![image](https://github.com/user-attachments/assets/8889ef2a-6d88-4765-a22a-6927e78d8f27)
+
+Y guardamos los cambios.
+
 ![image](https://github.com/user-attachments/assets/0436ef02-75c3-4894-9b5d-7ad595f77809)
+
+Ahora volvemos a configurar el server DHCP para la interfaz DMZ 
+
+![image](https://github.com/user-attachments/assets/60a1a3c4-0157-46d2-b12f-2617826fcde5)
+
+Seleccionamos la DMZ esta vez, y le activamos el server DHCP en la interfaz, además permitimos que cualquier DHCP obtemga 
+una IP dentro del rango que le pondremos a continuación
+
 ![image](https://github.com/user-attachments/assets/926e3fb4-0194-4b10-9c86-63e10a481376)
+
+Le establecemos el rango de 192.168.20.100 y 192.168.20.200
+
 ![image](https://github.com/user-attachments/assets/f1fbe1d5-82dc-4879-8aca-48a5d5a74110)
+
+Y finalmente en cuanto a los servidores DNS (al final del todo), en el primero le introducimos el 8.8.8.8 (perteneciente a 
+Google) y el 8.8.4.4 (también de Google)
+
 ![image](https://github.com/user-attachments/assets/4e521f6c-9370-4b6c-bc0e-979164e8cb7f)
+
+---
 
 # CREACIÓN DE REGLAS
 
 ## Regla NAT
 
+Esta regla consiste en permitir el acceso al puerto 80 del servidor web desde el exterior de la red LAN.
+Para ello, primero nos dirigimos a Firewall > NAT, y en el apartado de Port Forward hacemos clic sobre Add, para añadir una 
+regla nueva.
+
 ![image](https://github.com/user-attachments/assets/ab13e0ec-a252-40ee-832f-73cdb2546d92)
-![image](https://github.com/user-attachments/assets/f4ea5d0e-3633-4720-989f-ab435b607e44)
+
+En cuanto a la Interfaz, le colocaremos la LAN, y el protocolo será TCP. 
+El destino será una dirección LAN y en cuanto al rango de puertos de destino seleccionamos en ambas el puerto HTTP (puerto 
+80)
+
 ![image](https://github.com/user-attachments/assets/98d3fee1-0610-4e5c-b3da-747fd1e99dee)
-![image](https://github.com/user-attachments/assets/8591230c-1af7-4d89-bd95-c42e5a0f81a3)
+
+La siguiente configuración será la siguiente.
+La IP de destino se redirigirá a la red DMZ y el puerto de destino será el HTTP (puerto 80).
+En la descripción pondremos lo que deseemos. 
+
 ![image](https://github.com/user-attachments/assets/f79cdbfd-7bdf-45a0-bda6-46b576586ae0)
-![image](https://github.com/user-attachments/assets/423d9913-5907-458f-812d-80ab0d4abbf3)
+
+Guardamos los cambios
+
+![image](https://github.com/user-attachments/assets/8591230c-1af7-4d89-bd95-c42e5a0f81a3)
 
 ## Regla SSH
 
+Para esta regla debemos ir al mismo sitio que para la anterior y seleccionar Add.
+Esta vez la interfaz será en WAN, y el protocolo seguirá siendo TCP. El destino será una red WAN y el rango de destino será el SSH (puerto 22).
+En cuanto al campo de Redirect target IP, le agregaremos la 192.168.10.10.
+
 ![image](https://github.com/user-attachments/assets/1827f644-0521-4f41-bed7-45067dd7ce16)
+
+Se redirigirá al puerto 22 (SSH).
+En la descripción escribiremos algo relacionado con lo que hemos creado.
+
 ![image](https://github.com/user-attachments/assets/4711db3c-3240-448b-9fbf-f3a2f53c9317)
 
 Escribimos en la terminal de la máquina Kubuntu el siguiente comando 
 
-´´´
+```
 ssh estudiante@192.168.10.2
-´´´
+```
 
 
 ## Regla para bloquear el acceso SSH al servidor web desde cualquier sitio
 
+Esta regla hará que cualquier IP que intente conectarse al servidor web, sea bloqueada.
+Esta vez nos dirigimos a la ruta Firewall > Rules > DMZ.
+
 ![image](https://github.com/user-attachments/assets/2ccd6f8f-b88f-47a7-9158-46587af71d4c)
+
+La acción que hará será bloquear el acceso al servidor web.
+La interfaz será la DMZ y el protocolo TCP.
+
 ![image](https://github.com/user-attachments/assets/ff7b4f5b-e8ea-47d1-84d3-452dc7d27149)
+
+El campo de source lo dejamos en Any, para que cualquier intento sea bloqueado por esta regla, en el puerto 22, que es el 
+que pertenece al SSH.
+
 ![image](https://github.com/user-attachments/assets/ca3c25e0-6b91-4b11-bb54-2cf4729ff572)
+
+En la descripción escribimos cualquier texto relacionado con la regla, como es mi caso.
+
 ![image](https://github.com/user-attachments/assets/75c58917-4317-43fe-bd17-38091157d27f)
+
+---
 
 ## Regla para dejar pasar a la ip de nuestro equipo
 
-![image](https://github.com/user-attachments/assets/33cafac3-7cf6-4a43-8013-278195f8b932)
-![image](https://github.com/user-attachments/assets/bd7b9425-531f-41b9-8e4d-66dc01246357)
+Esta regla lo que hará es dejar pasar una IP que le introduzcamos, nos situamos en el sitio que nos indica siguiendo la ruta Firewall > Rules > DMZ (la misma que la regla anterior)
+
+![image](https://github.com/user-attachments/assets/50eeb04a-3169-4e1e-b8ec-055dce677c0d)
+
+
+
+![image](https://github.com/user-attachments/assets/165cc5ce-c2e9-424e-8cf1-eb6a5f5b1b8f)
+
 ![image](https://github.com/user-attachments/assets/19436953-b1f0-4a31-9cb5-ab481435fd0a)
 
 En la terminal del Kubuntu escribimos lo siguiente
