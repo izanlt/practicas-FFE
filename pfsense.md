@@ -266,6 +266,7 @@ que pertenece al SSH.
 
 ![image](https://github.com/user-attachments/assets/ca3c25e0-6b91-4b11-bb54-2cf4729ff572)
 
+En cuanto al destino, escribimos la IP de nuestra máquina y el puerto del 22 (SSH) hasta cualquier otro.
 En la descripción escribimos cualquier texto relacionado con la regla, como es mi caso.
 
 ![image](https://github.com/user-attachments/assets/75c58917-4317-43fe-bd17-38091157d27f)
@@ -278,11 +279,13 @@ Esta regla lo que hará es dejar pasar una IP que le introduzcamos, nos situamos
 
 ![image](https://github.com/user-attachments/assets/50eeb04a-3169-4e1e-b8ec-055dce677c0d)
 
+Aquí colocamos la IP de nuestra máquina ya que es la que esta regla dejará pasar.
 
+![image](https://github.com/user-attachments/assets/51caa2e4-2b8a-41a3-833f-bc8f6034d5ed)
 
-![image](https://github.com/user-attachments/assets/165cc5ce-c2e9-424e-8cf1-eb6a5f5b1b8f)
+En cuanto al destino, colocaremos también la IP de nuestra máquina, y el puerto 22.
 
-![image](https://github.com/user-attachments/assets/19436953-b1f0-4a31-9cb5-ab481435fd0a)
+![image](https://github.com/user-attachments/assets/41fe125a-3d2c-4d2d-8dda-d602268126cf)
 
 En la terminal del Kubuntu escribimos lo siguiente
 
