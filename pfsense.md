@@ -25,23 +25,27 @@ Dentro del Taller de firewall tendremos 3 máquinas:
 ## Configuración de las redes en la máquina virtual de pfSense (DMZ Y LAN)
 
 Dentro de `VirtualBox` en las Herramientas (parte superior izquierda de la pantalla) hacemos clic en los 3 puntos.
+
 ![image](https://github.com/user-attachments/assets/fc5ff544-fd5e-400e-ac99-ce88d4450ded)
 
 Posteriormente, tendremos que hacer clic sobre Red
+
 ![image](https://github.com/user-attachments/assets/87fbb9c6-764d-4859-a42e-540937cf824c)
 
 Y ahora dentro de las **Redes NAT** tendremos que crear dos:
 - Red **DMZ**
 - Red **LAN**
 
-Al hacer clic derecho sobre la pantalla, tenemos la opción de Crear, para añadir una red
+Al hacer clic derecho sobre la pantalla, tenemos la opción de Crear, para añadir una red.
+
 ![image](https://github.com/user-attachments/assets/9ddf16b7-f763-4542-8b66-84bc21759d99)
 
 Seleccionamos esa opción y se nos crea una red, a la que tendremos que darle, por ejemplo, el nombre de DMZ.
 
 En cuanto a la IP, es la que nos da la práctica (192.168.20.0/24) y tendremos que deshabilitar el DHCP para que no se estblezca una IP por defecto a dicha red.
 
-La configuración de la red debería quedar de esta manera
+La configuración de la red debería quedar de esta manera:
+
 ![image](https://github.com/user-attachments/assets/f0d15fb8-726c-4840-bfed-47625c9df5e8)
 
 En cuanto a la LAN seguiremos el mismo procedimiento que en la DMZ, pero asignándole otra IP, que recibimos del enunciado de la práctica (192.168.10.0/24)
@@ -97,7 +101,7 @@ Hasta esta, en la que debemos seleccionar el disco en el que queremos que se nos
 
 ![image](https://github.com/user-attachments/assets/6e0c25ef-94d1-44b2-bd83-776eb6c704eb)
 
-Aceptamos y simplemente debemos esperar a que se instale y posteriormente reiniciar.
+Aceptamos y debemos esperar a que se instale y posteriormente reiniciar.
 
 ![image](https://github.com/user-attachments/assets/dfbc2781-c909-43cd-bcae-0a28c513151d)
 ![image](https://github.com/user-attachments/assets/30af8e72-5dcb-4bed-a87c-e9af83e9c1d6)
@@ -167,7 +171,7 @@ En el desplegable de Deny Unknown Clients seleccionamos "Allow all clients"
 
 ![image](https://github.com/user-attachments/assets/8aa40d2f-b94e-48ec-b35a-8468278471fb)
 
-Posteriormente, seguiremos la ruta de System > Advanced, que se encuentra en la parte superior de nuestra pantalla
+Posteriormente, seguiremos la ruta de System > Advanced, que se encuentra en la parte superior de nuestra pantalla.
 
 ![image](https://github.com/user-attachments/assets/1f6c6fb6-97f6-4055-9979-358d1d3f6a6c)
 
@@ -183,12 +187,12 @@ Y guardamos los cambios.
 
 ![image](https://github.com/user-attachments/assets/0436ef02-75c3-4894-9b5d-7ad595f77809)
 
-Ahora volvemos a configurar el server DHCP para la interfaz DMZ 
+Ahora volvemos a configurar el server DHCP para la interfaz DMZ .
 
 ![image](https://github.com/user-attachments/assets/60a1a3c4-0157-46d2-b12f-2617826fcde5)
 
 Seleccionamos la DMZ esta vez, y le activamos el server DHCP en la interfaz, además permitimos que cualquier DHCP obtemga 
-una IP dentro del rango que le pondremos a continuación
+una IP dentro del rango que le pondremos a continuación.
 
 ![image](https://github.com/user-attachments/assets/926e3fb4-0194-4b10-9c86-63e10a481376)
 
@@ -215,7 +219,7 @@ regla nueva.
 
 En cuanto a la Interfaz, le colocaremos la LAN, y el protocolo será TCP. 
 El destino será una dirección LAN y en cuanto al rango de puertos de destino seleccionamos en ambas el puerto HTTP (puerto 
-80)
+80).
 
 ![image](https://github.com/user-attachments/assets/98d3fee1-0610-4e5c-b3da-747fd1e99dee)
 
@@ -225,7 +229,7 @@ En la descripción pondremos lo que deseemos.
 
 ![image](https://github.com/user-attachments/assets/f79cdbfd-7bdf-45a0-bda6-46b576586ae0)
 
-Guardamos los cambios
+Guardamos los cambios.
 
 ![image](https://github.com/user-attachments/assets/8591230c-1af7-4d89-bd95-c42e5a0f81a3)
 
@@ -242,7 +246,7 @@ En la descripción escribiremos algo relacionado con lo que hemos creado.
 
 ![image](https://github.com/user-attachments/assets/4711db3c-3240-448b-9fbf-f3a2f53c9317)
 
-Escribimos en la terminal de la máquina Kubuntu el siguiente comando 
+Escribimos en la terminal de la máquina Kubuntu el siguiente comando.
 
 ```
 ssh estudiante@192.168.10.2
@@ -275,7 +279,7 @@ En la descripción escribimos cualquier texto relacionado con la regla, como es 
 
 ## Regla para dejar pasar a la ip de nuestro equipo
 
-Esta regla lo que hará es dejar pasar una IP que le introduzcamos, nos situamos en el sitio que nos indica siguiendo la ruta Firewall > Rules > DMZ (la misma que la regla anterior)
+Esta regla lo que hará es dejar pasar una IP que le introduzcamos, nos situamos en el sitio que nos indica siguiendo la ruta Firewall > Rules > DMZ (la misma que la regla anterior).
 
 ![image](https://github.com/user-attachments/assets/50eeb04a-3169-4e1e-b8ec-055dce677c0d)
 
@@ -287,7 +291,7 @@ En cuanto al destino, colocaremos también la IP de nuestra máquina, y el puert
 
 ![image](https://github.com/user-attachments/assets/41fe125a-3d2c-4d2d-8dda-d602268126cf)
 
-En la terminal del Kubuntu escribimos lo siguiente
+En la terminal del Kubuntu escribimos lo siguiente.
 
 ```
 ssh estudiante@192.168.20.100
@@ -301,7 +305,7 @@ Esto significa que estamos en el servidor web desde el SSH.
 
 # TAREAS OPCIONALES
 
-## Regla de Firewall para tener acceso al servidor web solo de 8:00 a 20:00
+## Regla de Firewall para tener acceso al servidor web solo de 8:00 a 20:00.
 
 ### Creación horario
 
@@ -315,16 +319,16 @@ Primero introducimos el nombre que deseemos del horario junto a su descripción.
 ![image](https://github.com/user-attachments/assets/ef9c2527-fcab-4c86-82ea-31e03be15893)
 
 
-Seleccionamos lo que queda del mes de mayo para realizar la regla
+Seleccionamos lo que queda del mes de mayo para realizar la regla.
 ![image](https://github.com/user-attachments/assets/7e0fe8d3-7fea-4bcf-a381-298b28cde7b7)
 
 Justamente debajo del calendario que nos da el PfSense, encontramos un campo para establecer las horas.
 ![image](https://github.com/user-attachments/assets/23ea240c-4460-4eaa-91f4-7251c1180460)
 
-Aquí confirmamos que nuestro horario está bien configurado y lo guardamos
+Aquí confirmamos que nuestro horario está bien configurado y lo guardamos.
 ![image](https://github.com/user-attachments/assets/5b60eb48-6798-4efe-9ed1-50a2aaffb71e)
 
-Confirmamos que se nos ha guardado después de hacer clic sobre el botón de "Save"
+Confirmamos que se nos ha guardado después de hacer clic sobre el botón de "Save".
 ![image](https://github.com/user-attachments/assets/29fcb411-b8b1-494e-b266-139635c4c7a5)
 
 ### Creación regla con el horario
@@ -343,7 +347,7 @@ Y ahora le introducimos la descripción que deseemos.
 
 ![image](https://github.com/user-attachments/assets/ada1aa5a-c615-4371-a759-169c086987a0)
 
-Para verificarlo, en la siguiente imagen se puede apreciar que la hora pertenece al rango de horas entre las 8:00 y las 20:00, por lo tanto me deja acceder al servidor web
+Para verificarlo, en la siguiente imagen se puede apreciar que la hora pertenece al rango de horas entre las 8:00 y las 20:00, por lo tanto me deja acceder al servidor web.
 
 ![image](https://github.com/user-attachments/assets/3e0881ce-511a-48fd-97f5-d4c80b272575)
 
@@ -387,3 +391,7 @@ Para cada interfaz se necesitan las siguientes IPs:
 #### Versiones de pfSense
 
 Es fundamental que ambas máquinas tengan la misma versión de pfSense instalada para que no den errores.
+
+
+# TRABAJO FOL (IPE)
+
