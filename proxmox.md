@@ -52,3 +52,27 @@ Procedemos con la instalación.
 
 ![image](https://github.com/user-attachments/assets/61e14be5-4986-4954-8a4f-3edb411f4198)
 
+Cuando se ha instalado, entramos en la configuración de la máquina y eliminamos la iso de proxmox:
+
+![image](https://github.com/user-attachments/assets/fb168ec7-7cd9-498b-bc62-a7a41deef349)
+
+La volvemos a ejecutar y nos aparece el siguiente mensaje en la pantalla. 
+
+![image](https://github.com/user-attachments/assets/4f5f089c-5997-4a2e-8ac6-4ebc0d34ee9f)
+
+Lo que debemos hacer es entrar en nuestro buscador y escribir la dirección que nos aparece, en mi caso es la siguiente: 
+
+```
+https://172.23.42.121:8006/
+```
+
+De esta manera podremos acceder a nuestro servidor de Proxmox.
+
+![image](https://github.com/user-attachments/assets/01d760eb-e1d9-41e4-9cf5-a230e08301e8)
+
+Cuando entramos en el servidor tenemos que rellenar los siguientes campos, en el que el nombre de usuario será root, y la contraseña es la que le establecimos durante la instalación del servidor.
+
+![image](https://github.com/user-attachments/assets/c0f6e77e-f672-41d3-8351-80ea518be94c)
+
+Ahora crearemos la otra máquina con la iso de Proxmox.
+
