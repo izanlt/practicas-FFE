@@ -1,4 +1,3 @@
-
 # DOCUMENTACIÓN PROYECTO PFSENSE
 
 ## Creación de la máquina virtual de pfSense
