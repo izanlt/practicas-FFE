@@ -74,5 +74,19 @@ Cuando entramos en el servidor tenemos que rellenar los siguientes campos, en el
 
 ![image](https://github.com/user-attachments/assets/c0f6e77e-f672-41d3-8351-80ea518be94c)
 
-Ahora crearemos la otra máquina con la iso de Proxmox.
+Ahora crearemos la otra máquina con la iso de Proxmox, en la que le introduciremos la misma configuración, pero cambiandole el nombre de pve a pve2 y cambiandole la ip
 
+![image](https://github.com/user-attachments/assets/f53b842a-ed7d-4ab8-bf9b-734cb9fc2ea9)
+
+Cuando entremos en el servidor con Google Chrome, hacemos clic en crear Cluster
+
+![image](https://github.com/user-attachments/assets/2ab61166-d24a-48ba-95fd-b9f11f3e0287)
+
+Y para unir al otro pve, hacemos clic en información del cluster 
+
+![image](https://github.com/user-attachments/assets/3432b1d8-2a65-464b-bb3c-643abbb7a7f1)
+
+Y copiamos la información.
+A la hora de unir el pve2, nos pide la información del cluster, la ip, y la contraseña.
+
+![image](https://github.com/user-attachments/assets/3349783a-e148-45eb-bd78-59d0bf41cb57)
