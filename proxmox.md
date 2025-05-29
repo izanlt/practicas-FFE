@@ -1,9 +1,12 @@
 # DOCUMENTACIÓN PROYECTO PROXMOX (TEDRA)
 
+---
+
 ## Creación de máquinas virtuales
 
 Para realizar la siguiente práctica, debemos crear dos máquinas virtuales con la iso de Proxmox y con una capacidad de 6144 MB de RAM.
-Para encontrar la iso de Proxmox, realizamos una búsqueda en el buscador de Google, y en la página oficial de Proxmox encontramos en la parte superior derecha, el apartado de `Downloads`
+Para encontrar la iso de Proxmox, realizamos una búsqueda en el buscador de Google, 
+y en la página oficial de Proxmox encontramos en la parte superior derecha, el apartado de `Downloads`
 
 ![image](https://github.com/user-attachments/assets/9a44e973-3701-4df2-bed6-b31c6db1a606)
 
@@ -12,7 +15,7 @@ Hacemos clic en Downloads y descargamos el primer archivo, que es la iso de **Pr
 ![image](https://github.com/user-attachments/assets/ddb86622-596c-4810-9048-f374cd449c60)
 
 Una vez instalada, nos dirigimos a Hyper-V para crear las máquinas virtuales.
-Le ponemos la memoria RAM que nos indiica el enunciado de la práctica
+Le ponemos la memoria RAM que nos indiica el enunciado de la práctica.
 
 ![image](https://github.com/user-attachments/assets/ed7274d0-fac3-4ec2-be5e-3c1b6c5b9356)
 
@@ -30,23 +33,23 @@ Después de ejecutarla, nos sale la siguiente pantalla, en la que elegiremos la 
 
 ![image](https://github.com/user-attachments/assets/cc49404f-8ddb-4ffa-9fc0-9d8a0da46ba7)
 
-Aceptamos los términos de licencia
+Aceptamos los términos de licencia.
 
 ![image](https://github.com/user-attachments/assets/fbf4baa4-6489-4f5d-b628-ff00fb4a3adf)
 
-Seleccioanamos el ext4
+Seleccioanamos el ext4.
 
 ![image](https://github.com/user-attachments/assets/4fe19bc1-3b0d-40d9-a0f5-b1376f02372f)
 
-En cuanto al idioma, seleccionaremos España y la zona horaria de Madrid 
+En cuanto al idioma, seleccionaremos España y la zona horaria de Madrid.
 
 ![image](https://github.com/user-attachments/assets/dfc2649d-99dd-481f-bbfd-e2eed6712b14)
 
-Introducimos nuestra contraseña y nuestro correo eléctronico
+Introducimos nuestra contraseña y nuestro correo eléctronico.
 
 ![image](https://github.com/user-attachments/assets/786c5f10-9c5e-49fa-97c6-ce82eae4d21d)
 
-Introducimos las IPs y le damos a "Next"
+Introducimos las IPs y le damos a "Next".
 
 ![image](https://github.com/user-attachments/assets/b855190a-5df5-411c-9f35-c7e5dbca2772)
 
@@ -57,6 +60,8 @@ Procedemos con la instalación.
 Cuando se ha instalado, entramos en la configuración de la máquina y eliminamos la iso de proxmox:
 
 ![image](https://github.com/user-attachments/assets/fb168ec7-7cd9-498b-bc62-a7a41deef349)
+
+---
 
 ## Creación cluster
 
@@ -79,15 +84,15 @@ Cuando entramos en el servidor tenemos que rellenar los siguientes campos, en el
 
 ![image](https://github.com/user-attachments/assets/c0f6e77e-f672-41d3-8351-80ea518be94c)
 
-Ahora crearemos la otra máquina con la iso de Proxmox, en la que le introduciremos la misma configuración, pero cambiandole el nombre de pve a pve2 y cambiandole la ip
+Ahora crearemos la otra máquina con la iso de Proxmox, en la que le introduciremos la misma configuración, pero cambiandole el nombre de pve a pve2 y cambiandole la ip.
 
 ![image](https://github.com/user-attachments/assets/f53b842a-ed7d-4ab8-bf9b-734cb9fc2ea9)
 
-Cuando entremos en el servidor con Google Chrome, hacemos clic en crear cluster
+Cuando entremos en el servidor con Google Chrome, hacemos clic en crear cluster.
 
 ![image](https://github.com/user-attachments/assets/2ab61166-d24a-48ba-95fd-b9f11f3e0287)
 
-Y para unir al otro pve, hacemos clic en información del cluster 
+Y para unir al otro pve, hacemos clic en información del cluster.
 
 ![image](https://github.com/user-attachments/assets/3432b1d8-2a65-464b-bb3c-643abbb7a7f1)
 
