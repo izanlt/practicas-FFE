@@ -232,6 +232,7 @@ Guardamos los cambios.
 
 ![image](https://github.com/user-attachments/assets/8591230c-1af7-4d89-bd95-c42e5a0f81a3)
 
+
 ## Regla SSH
 
 Para esta regla debemos ir al mismo sitio que para la anterior y seleccionar Add.
@@ -274,7 +275,6 @@ En la descripción escribimos cualquier texto relacionado con la regla, como es 
 
 ![image](https://github.com/user-attachments/assets/75c58917-4317-43fe-bd17-38091157d27f)
 
----
 
 ## Regla para dejar pasar a la ip de nuestro equipo
 
@@ -301,6 +301,8 @@ Y nos sale lo siguiente
 ![image](https://github.com/user-attachments/assets/86aa1d58-f62e-49fd-aa77-0dbe0e753ba7)
 
 Esto significa que estamos en el servidor web desde el SSH.
+
+---
 
 # TAREAS OPCIONALES
 
@@ -349,6 +351,48 @@ Y ahora le introducimos la descripción que deseemos.
 Para verificarlo, en la siguiente imagen se puede apreciar que la hora pertenece al rango de horas entre las 8:00 y las 20:00, por lo tanto me deja acceder al servidor web.
 
 ![image](https://github.com/user-attachments/assets/3e0881ce-511a-48fd-97f5-d4c80b272575)
+
+---
+
+## OpenVPN
+
+Seguimos la ruta VPN > OpenVPN > Wizards
+
+![image](https://github.com/user-attachments/assets/9552e981-4a7e-4666-b0ac-cea975167ea2)
+
+Creamos un certificado autorizado (CA) y rellenamos los campos con los datos necesarios
+
+![image](https://github.com/user-attachments/assets/fe4049bc-f49e-4ca7-bc0c-e04ce1bb4ae5)
+![image](https://github.com/user-attachments/assets/f1bf27cd-fc04-4c2c-b610-63c7220accd2)
+
+Seleccionamos el servidor que viene por defecto
+
+![image](https://github.com/user-attachments/assets/95078441-f969-44d0-87d1-5587d94f3537)
+
+En cuanto a las informaciones generales, haremos las siguientes configuraciones
+
+![image](https://github.com/user-attachments/assets/eacedc09-44d8-4c82-8466-37f62bdd8be0)
+![image](https://github.com/user-attachments/assets/948cce9a-ae01-4b3b-8d4c-bd2425ea6128)
+
+En cuanto a la configuración del tunel, introduciremos los siguientes datos
+
+![image](https://github.com/user-attachments/assets/917336b9-a3b4-410c-a9ba-333c458f7351)
+
+Y aquí los servidores DNS (el dominio es inventado)
+
+![image](https://github.com/user-attachments/assets/5b4d89be-41d9-48ef-93a3-207f7598a792)
+
+Aqui hacemos clic sobre Next
+
+![image](https://github.com/user-attachments/assets/6f46cbbf-f93b-4536-8cc6-0e8c05ad77f4)
+
+Y ahora sobre Finish
+
+![image](https://github.com/user-attachments/assets/4241000c-d110-4d29-9c2c-35e1cbeb16ff)
+
+Y ya estaría creado el server de OpenVPN 
+
+![image](https://github.com/user-attachments/assets/8d469760-766b-4456-81fc-c23ba7b6c336)
 
 ---
 
