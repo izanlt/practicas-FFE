@@ -24,6 +24,8 @@ Una vez realizados estos pasos, la ejecutamos.
 
 ![image](https://github.com/user-attachments/assets/eee7cb9a-d636-435d-ae42-a22d5bc9d283)
 
+## Instalación Proxmox
+
 Después de ejecutarla, nos sale la siguiente pantalla, en la que elegiremos la instalación desde el entorno gráfico.
 
 ![image](https://github.com/user-attachments/assets/cc49404f-8ddb-4ffa-9fc0-9d8a0da46ba7)
@@ -56,6 +58,9 @@ Cuando se ha instalado, entramos en la configuración de la máquina y eliminamo
 
 ![image](https://github.com/user-attachments/assets/fb168ec7-7cd9-498b-bc62-a7a41deef349)
 
+## Creación cluster
+
+Después de realizar los pasos anteriores, debemos ejecutar la máquina virtual otra vez para que no se repita en bucle la instalación de Proxmox 
 La volvemos a ejecutar y nos aparece el siguiente mensaje en la pantalla. 
 
 ![image](https://github.com/user-attachments/assets/4f5f089c-5997-4a2e-8ac6-4ebc0d34ee9f)
@@ -78,7 +83,7 @@ Ahora crearemos la otra máquina con la iso de Proxmox, en la que le introducire
 
 ![image](https://github.com/user-attachments/assets/f53b842a-ed7d-4ab8-bf9b-734cb9fc2ea9)
 
-Cuando entremos en el servidor con Google Chrome, hacemos clic en crear Cluster
+Cuando entremos en el servidor con Google Chrome, hacemos clic en crear cluster
 
 ![image](https://github.com/user-attachments/assets/2ab61166-d24a-48ba-95fd-b9f11f3e0287)
 
@@ -87,6 +92,6 @@ Y para unir al otro pve, hacemos clic en información del cluster
 ![image](https://github.com/user-attachments/assets/3432b1d8-2a65-464b-bb3c-643abbb7a7f1)
 
 Y copiamos la información.
-A la hora de unir el pve2, nos pide la información del cluster, la ip, y la contraseña.
+A la hora de unir el pve2, nos pide la información del cluster, la ip, y la contraseña, por lo tanto la información la copiaremos en su campo correspondiente, y lo demás según se haya configurado.
 
 ![image](https://github.com/user-attachments/assets/3349783a-e148-45eb-bd78-59d0bf41cb57)
