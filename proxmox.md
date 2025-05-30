@@ -100,3 +100,127 @@ Y copiamos la información.
 A la hora de unir el pve2, nos pide la información del cluster, la ip, y la contraseña, por lo tanto la información la copiaremos en su campo correspondiente, y lo demás según se haya configurado.
 
 ![image](https://github.com/user-attachments/assets/3349783a-e148-45eb-bd78-59d0bf41cb57)
+
+### Comando paravirtualización
+
+Para dar permiso a las máquinas virtuales de acceso a las instrucciones del procesador, entraremos en el PowerShell e introduciremos el siguiente comando:
+
+```
+Set-VMProcessor -VMName proxmox -ExposeVirtualizationExtensions $true
+```
+
+## Amacenamiento compartido
+
+### Creación máquina virtual con servidor NFS
+
+En cuanto a la máquina virtual que vamos a crear a continuación, necesitamos una versión de Ubuntu Server con aproximadamente 512 MB de RAM.
+
+![image](https://github.com/user-attachments/assets/9ef99a60-347e-4755-9b36-3fc5323a9c35)
+
+Le ponemos como adaptador de red el Default Switch para que tenga acceso a internet.
+
+![image](https://github.com/user-attachments/assets/f2e8f393-b53d-4830-88f5-34c430144f8e)
+
+Introducimos la iso de ubuntu en la máquina virtual
+
+![image](https://github.com/user-attachments/assets/745bed98-adf3-4e2f-97bb-c76e7db98950)
+
+### Instalación servidor NFS
+
+Después de configurar el server y elegir que la versión de Ubuntu tiene que ser la minimizada, creamos el usuario
+
+![image](https://github.com/user-attachments/assets/90b57834-bbe6-4f88-a108-4b385e201c46)
+
+Una vez tenemos la máquina configurada y con el ubuntu server instalado, nos disponemos a crear y configurar el servidor NFS
+Lo primero que haremos será ejecutar el siguiente comando para actualizar el sistema.
+
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+Después de actualizar el sistema, nos instalaremos el servidor NFS mediante el siguiente comando:
+
+```
+sudo apt install nfs-kernel-server -y
+```
+
+![image](https://github.com/user-attachments/assets/898b1b38-ef4a-4512-b2d9-4ea8379badfb)
+![image](https://github.com/user-attachments/assets/02afb049-6101-4aa3-9791-e0a78823d982)
+
+Y ya tendremos el servidor NFS instalado
+
+![image](https://github.com/user-attachments/assets/7de9549b-4f22-4c57-b37c-ac805aa38213)
+
+### Configuración servidor NFS
+
+Una vez innstalado el servidor NFS, tenemos que configurarlo, y para ello tendremos que crear un directorio para compartir
+
+```
+sudo mkdir -p /mnt/nfs_share
+```
+
+Y le estableceremos los permisos al directorio previamente creado para que se pueda acceder a él mediante los siguientes comando (en orden)
+
+```
+sudo chown nobody:nogroup /mnt/nfs_share
+```
+
+```
+sudo chmod 777 /mnt/nfs_share
+```
+
+Editamos el archivo `/etc/exports` y añadiremos la siguiente línea 
+
+```
+/mnt/nfs_share 172.23.42.121/24(rw,sync,no_subtree_check,no_root_squash)
+```
+
+El resultado quedaría de esta manera
+
+![image](https://github.com/user-attachments/assets/88ff53e2-17a9-4059-80de-707d8078234d)
+
+Y reiniciamos el servidor con el siguiente comando:
+
+```
+sudo systemctl restart nfs-kernel-server
+```
+
+Ahora buscaremos nuestra IP asignada al Default Switch
+
+![image](https://github.com/user-attachments/assets/ed83760d-3ae1-40c0-ab04-5c3089d77184)
+
+Y cuando la tenemos, iniciamos el entorno gráfico de Proxmox, hacemos clic en el almacenamiento y a Agregar
+
+![image](https://github.com/user-attachments/assets/261f50a5-1868-4a27-b980-e200552a4091)
+
+Rellenamos los siguientes campos con el nombre, la IP, el contenido y los nodos del clúster
+
+![image](https://github.com/user-attachments/assets/4e9970c3-97f5-4fff-8b74-4eda15b815e8)
+
+Y ya nos sale el resultado
+
+![image](https://github.com/user-attachments/assets/cbeda5fd-e6e2-437d-aba1-47380dc090d6)
+
+---
+
+## Creación y gestión de contenedores
+
+Nos dirigimos al panel situado en el lado izquierdo de la pantalla, en el que seleccionaremos un nodo (en mi caso `pve`) y seleccionaremos el almacenamiento local
+
+![image](https://github.com/user-attachments/assets/2e6012de-b72a-41f1-8e8b-c83fac624cff)
+
+Seleccionamos la opción que dice Plantillas de CT
+
+![image](https://github.com/user-attachments/assets/cf0da809-02b3-4a6c-91b1-f67c34062394)
+
+Y hacemos clic en el recuadro que dice Plantillas. Se nos abre la siguiente pestaña y buscaremos en la lupa "Debian"
+
+![image](https://github.com/user-attachments/assets/0e4bcc48-9b5a-43bd-b800-75d85c0165db)
+![image](https://github.com/user-attachments/assets/ea5581ff-ac03-42de-8975-434dd5e8eaaf)
+
+Descargamos la primera que nos aparece
+
+![image](https://github.com/user-attachments/assets/6d7de5fb-f029-4aeb-a779-0bb4f37ebae3)
+
+
+
