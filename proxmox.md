@@ -222,5 +222,62 @@ Descargamos la primera que nos aparece
 
 ![image](https://github.com/user-attachments/assets/6d7de5fb-f029-4aeb-a779-0bb4f37ebae3)
 
+### Contenedor 1
 
+En la parte superior de la pantalla en la esquina derecha hacemoc clic en el recuadro que dice `Crear CT` para crear un contenedor
+
+![image](https://github.com/user-attachments/assets/a0efbcb7-8503-41f4-a1e8-12f071cc504a)
+
+Le damos la configuración correspondiente
+
+#### General
+
+![image](https://github.com/user-attachments/assets/c35f053f-f5b3-47ed-a905-94eb7bdf70f0)
+
+#### Plantilla
+
+Le asignamos la plantilla que hemos descargado
+
+![image](https://github.com/user-attachments/assets/b2bd0031-dfe0-45a9-933c-d1840b31af9e)
+
+#### Discos
+
+Le damos el disco local
+
+![image](https://github.com/user-attachments/assets/d7d7de82-c094-46e7-bb08-a7f4ea86e465)
+
+#### CPU
+
+Le damos un núcleo
+
+![image](https://github.com/user-attachments/assets/00f6154a-f5a5-4a31-acf3-8ec8e02aea9a)
+
+#### Memoria
+
+Le asignamos la memoria mínima
+
+![image](https://github.com/user-attachments/assets/e0c9141b-d2ad-441d-8457-802eebad3487)
+
+#### Red
+
+Le indicamos que use DHCP
+
+![image](https://github.com/user-attachments/assets/f1aa1b38-d092-48ad-a529-b903ebe603f3)
+
+#### DNS
+
+Le dejamos los servidores DNS predeterminados
+
+![image](https://github.com/user-attachments/assets/4cca384e-efa7-4c4a-a0ff-e95adddad303)
+
+#### Confirmación
+
+Confirmamos la creación del contenedor
+
+![image](https://github.com/user-attachments/assets/fa6632c9-ae46-4389-bbd3-cc969b228048)
+
+Una vez creado el contenedor 1, debemos instalarle los servicios que nos indica la práctica.
+Por tanto, nos posicionamos en el contenedor que acabamos de crear y nos vamos a la consola de comandos.
+
+![image](https://github.com/user-attachments/assets/fc849c86-facd-4628-bb3d-fd65f8d6df4c)
 
