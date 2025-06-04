@@ -207,79 +207,140 @@ Y ya nos sale el resultado
 
 ## Creación y gestión de contenedores
 
-Nos dirigimos al panel situado en el lado izquierdo de la pantalla, en el que seleccionaremos un nodo (en mi caso `pve`) y seleccionaremos el almacenamiento local
+Antes de crear los contenedores debemos seguir los siguientes pasos:
 
-![image](https://github.com/user-attachments/assets/2e6012de-b72a-41f1-8e8b-c83fac624cff)
+### Conexión a internet en los contenedores
 
-Seleccionamos la opción que dice Plantillas de CT
+Para tener conexión a internet en los contenedores tendremos que seguir los siguietes pasos.
+Entramos en el archivo `/etc/network/interfaces` con **nano** y al final del archivo agregamos lo siguiente:
 
-![image](https://github.com/user-attachments/assets/cf0da809-02b3-4a6c-91b1-f67c34062394)
+```
+auto vmbr1
+iface vmbr1 inet static
+    address 192.168.100.1
+    netmask 255.255.255.0
+    bridge_ports none
+    bridge_stp off
+    bridge_fd 0
+    post-up echo 1 > /proc/sys/net/ipv4/ip_forward
+    post-up iptables -t nat -A POSTROUTING -s '192.168.100.0/24' -o vmbr0 -j MASQUERADE
+    post-down iptables -t nat -D POSTROUTING -s '192.168.100.0/24' -o vmbr0 -j MASQUERADE
 
-Y hacemos clic en el recuadro que dice Plantillas. Se nos abre la siguiente pestaña y buscaremos en la lupa "Debian"
+```
 
-![image](https://github.com/user-attachments/assets/0e4bcc48-9b5a-43bd-b800-75d85c0165db)
-![image](https://github.com/user-attachments/assets/ea5581ff-ac03-42de-8975-434dd5e8eaaf)
+Después editaremos el archivo `/etc/sysctl.conf` y descomentaremos la línea que dices:
 
-Descargamos la primera que nos aparece
+```
+net.ipv4.ip_forward=1
+```
 
-![image](https://github.com/user-attachments/assets/6d7de5fb-f029-4aeb-a779-0bb4f37ebae3)
+Y aplicamos los cambios con los siguientes comandos 
+
+![image](https://github.com/user-attachments/assets/dec32205-a013-4a1b-b3b0-db64a0620444)
 
 ### Contenedor 1
 
-En la parte superior de la pantalla en la esquina derecha hacemoc clic en el recuadro que dice `Crear CT` para crear un contenedor
-
-![image](https://github.com/user-attachments/assets/a0efbcb7-8503-41f4-a1e8-12f071cc504a)
-
-Le damos la configuración correspondiente
+Para crear los contenedores, nos tendremos que dirigir a la parte superior derecha de nuestra pantalla en donde dice "Crear CT", los pasos que se realizarán son los siguientes.
 
 #### General
 
-![image](https://github.com/user-attachments/assets/c35f053f-f5b3-47ed-a905-94eb7bdf70f0)
+![image](https://github.com/user-attachments/assets/98e156f1-aaf6-440c-ba60-4a73873f69d2)
 
 #### Plantilla
 
-Le asignamos la plantilla que hemos descargado
+Seleccionamos la plantilla que hemos descargado anteriormente (Debian)
 
-![image](https://github.com/user-attachments/assets/b2bd0031-dfe0-45a9-933c-d1840b31af9e)
+![image](https://github.com/user-attachments/assets/820988f7-7078-46aa-865b-db6bc2c67d47)
 
 #### Discos
 
-Le damos el disco local
+Aquí hacemos clic sobre siguiente ya que no hay nada que configurar
 
-![image](https://github.com/user-attachments/assets/d7d7de82-c094-46e7-bb08-a7f4ea86e465)
+![image](https://github.com/user-attachments/assets/31cc3cf4-2804-4782-b0ce-65dd07084dba)
 
-#### CPU
+#### Núcleos
 
-Le damos un núcleo
+Le ponemos un núcleo
 
-![image](https://github.com/user-attachments/assets/00f6154a-f5a5-4a31-acf3-8ec8e02aea9a)
+![image](https://github.com/user-attachments/assets/fb1cd5fb-b61c-4893-a1af-bb50faa3667b)
 
 #### Memoria
 
-Le asignamos la memoria mínima
+En cuanto a la memoria le asignaremos medio GB de RAM (512 MB)
 
-![image](https://github.com/user-attachments/assets/e0c9141b-d2ad-441d-8457-802eebad3487)
+![image](https://github.com/user-attachments/assets/37a836e9-a8f9-45f3-97fb-4c6d917bd90a)
 
 #### Red
 
-Le indicamos que use DHCP
+Esta parte es muy importante, al puente le asignaremos el vmbr1, que es el que creamos anteriormente, y en la IPv4 le asignamos una que deseemos, junto a su gateway (puerta de enlace)
 
-![image](https://github.com/user-attachments/assets/f1aa1b38-d092-48ad-a529-b903ebe603f3)
+![image](https://github.com/user-attachments/assets/45911ce7-845b-423e-9380-ecd21460a440)
 
 #### DNS
 
-Le dejamos los servidores DNS predeterminados
+Los dejamos en vacío
 
-![image](https://github.com/user-attachments/assets/4cca384e-efa7-4c4a-a0ff-e95adddad303)
+![image](https://github.com/user-attachments/assets/6e5d2ac8-e09f-44fc-9e2f-65c7aaa4d043)
 
-#### Confirmación
+Una vez realizada la creación del contenedor, comprobamos que tenga internet mediante el siguiente comando 
 
-Confirmamos la creación del contenedor
+![image](https://github.com/user-attachments/assets/04923c9c-4f0c-43ac-a32f-a83083fc8acd)
 
-![image](https://github.com/user-attachments/assets/fa6632c9-ae46-4389-bbd3-cc969b228048)
+Y ahora instalaremos el servicio que nos pide el enunciado de la práctica.
 
-Una vez creado el contenedor 1, debemos instalarle los servicios que nos indica la práctica.
-Por tanto, nos posicionamos en el contenedor que acabamos de crear y nos vamos a la consola de comandos.
+![image](https://github.com/user-attachments/assets/54e8aab6-5516-4dce-a4ce-433f77c660ac)
 
-![image](https://github.com/user-attachments/assets/fc849c86-facd-4628-bb3d-fd65f8d6df4c)
+![image](https://github.com/user-attachments/assets/46a0f934-0571-4f4e-816d-4f0dc1266b30)
+
+
+### Contenedor 2
+
+Tendremos que repetir la configuración que realizamos en el nodo 1, pero esta vez en el 2 (pve2)
+Una vez lo hayamos configurado, entraremos en la creación del contenedor (arriba a la derecha de la pantalla). Seguimos los siguientes pasos:
+
+#### General
+
+Introducimos el ID del contenedor junto con la contraseña
+
+![image](https://github.com/user-attachments/assets/c15b9d84-de04-4a57-b30e-595521a4d934)
+
+#### Plantilla
+
+Seleccionamos la plantilla del Debian
+
+![image](https://github.com/user-attachments/assets/de1a52be-8c5b-4441-85c4-69c80c474883)
+
+#### Discos
+
+
+![image](https://github.com/user-attachments/assets/0290a146-fb81-4857-8e30-2efa4baf3f52)
+
+#### Núcleos
+
+Asignamos un núcleo al contenedor
+
+![image](https://github.com/user-attachments/assets/fc6f353b-1dcb-49e6-b247-0a4c993f6b20)
+
+#### Memoria
+
+Asignamos 512 MB de RAM
+
+![image](https://github.com/user-attachments/assets/03a429a5-4948-487b-9ee3-e9c4f48477cd)
+
+#### Red
+
+Le establecemos el puente que creamos anteriormente, junto con la IP que queramos y su gateway
+
+![image](https://github.com/user-attachments/assets/12e4a003-7fb2-4128-96b6-1c97930c75e3)
+
+#### DNS
+
+![image](https://github.com/user-attachments/assets/b42f9136-443f-4d3b-bc69-1d1b49c2ec1e)
+
+Instalamos el servidor que se nos pide (SSH)
+
+![image](https://github.com/user-attachments/assets/3433104d-0efb-4c89-b56f-0438184da7bf)
+
+Lo activamos y lo iniciamos
+
 
