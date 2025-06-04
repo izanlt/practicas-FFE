@@ -145,6 +145,8 @@ sudo apt install nfs-kernel-server -y
 ```
 
 ![image](https://github.com/user-attachments/assets/898b1b38-ef4a-4512-b2d9-4ea8379badfb)
+
+
 ![image](https://github.com/user-attachments/assets/02afb049-6101-4aa3-9791-e0a78823d982)
 
 Y ya tendremos el servidor NFS instalado
