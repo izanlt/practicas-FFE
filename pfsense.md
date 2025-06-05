@@ -438,3 +438,31 @@ Es fundamental que ambas máquinas tengan la misma versión de pfSense instalada
 ---
 
 # Proyecto FOL
+
+## Punto 1 (Empresas, actividades que se realizan)
+
+En cuanto a las empresas en las que se pueden encontrar estudiantes de ASIR (Administración de Sistemas Informáticos en Red) suelen ser de los siguientes tipo:
+
+### Empresas de tecnología:
+
+Empresas que estén focalizadas en el desarrollo de hardware y/o software para realizar tareas de seguridad o soluciones en las redes.
+
+### Instituciones locales
+
+Gestiones de las propias redes y sistemas informáticos
+
+### Empresas con servicio en la nube
+
+Los administradores de sistemas ofrecen servicios para proteger los datos de la nube
+
+### Actividades
+
+En cuanto a las actividades que realiza un administrador, podemos encontrar algunas como:
+
+- Administración de servidores para su configuración y mantenimiento.
+- Administración de redes (LAN; WAN o otras redes).
+- Soporte técnico en el que se solucionen problemas de red de los usuarios.
+- Seguridad, así como la instalación de medidas de seguridad para proteger los equipos de la empresa.
+
+## Punto 2 (identificación de 3 puestos de trabajo)
+
