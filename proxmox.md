@@ -1,4 +1,4 @@
-# DOCUMENTACIÓN PROYECTO PROXMOX (TEDRA)
+![image](https://github.com/user-attachments/assets/49b12a9e-006f-4a48-be84-a700246c7394)# DOCUMENTACIÓN PROYECTO PROXMOX (TEDRA)
 
 ---
 
@@ -342,104 +342,127 @@ Instalamos el servidor que se nos pide (SSH)
 
 Lo activamos y lo iniciamos
 
-## Creación y gestión de máquinas virtuales
+## Creación y gestión de máquinas virtuales (contenedores porque las máquinas no tienen conexión)
 
-### Máquina 1 (Alpine)
+### Contenedor 1
 
-Después de instalar los sistemas operativos, los introducimos en el servidor NFS, en mi caso me descargué 3 sistemas operativos.
+Realizamos la creación del primer contenedor, en el primer nodo, en el que le introduciremos la siguiente configuración
 
-![image](https://github.com/user-attachments/assets/e069f9f0-53f7-4007-a95f-d73538ff4e71)
+![image](https://github.com/user-attachments/assets/0630e8dd-1948-411d-8627-e0227628d2e0)
 
-Después hacemos clic en Crear VM y configuramos la máquina.
-Le damos el nombre que queramos
-
-![image](https://github.com/user-attachments/assets/5685f1a6-5a6e-4c62-8ffc-9142ab7ea84e)
-
-Introducimos el sistema operativo que deseemos, de los que están instalados en el servidor NFS
-
-![image](https://github.com/user-attachments/assets/5a835f01-6c72-49be-84e5-8a2a3dc0a154)
-
-Le indicamos el puente de acceso a internet.
-
-![image](https://github.com/user-attachments/assets/3d64525b-1b3d-4b70-a35a-29d0df8efb51)
-
-Dentro de la máquina instalamos el servicio
-
-![image](https://github.com/user-attachments/assets/b8c2af36-c9eb-4a7f-9325-eafa470cffc4)
-
-### Máquina 2 (Ubuntu Linux)
-
-Repetimos el mismo proceso de creación, pero en el otro nodo.
-Y cuando tengamos la máquina ya configurada y creada, instalamos el servicio.
-
-![image](https://github.com/user-attachments/assets/0ab16fde-7ea9-4463-a517-0bcbf06d4481)
-
-## Migración de máquinas virtuales
-
-En este apartado de la práctica, crearemos otra máquina virtual y la cambiaremos de nodo. Se puede realizar en modo caliente (máquina encendida) o en frío (máquina apagada).
-Lo primero es crear la máquina, con el sistema operativo restante.
-Realizamos todo el proceso de creación, en el que el resultado es el siguiente.
-
-![image](https://github.com/user-attachments/assets/a758a285-c4b3-4d09-9fcb-04d511b321bc)
-
-Instalamos el servicio en la máquina virtual
-
-![image](https://github.com/user-attachments/assets/7a020cbe-50ad-45b9-971c-42979e7c31f7)
-
-Ahora que la máquina está encendida, la migramos al otro nodo. De esta manera estaríamos haceindo la migración en caliente
-
-![image](https://github.com/user-attachments/assets/3c2baf23-c51b-4d35-a9b3-0861963667ea)
-
-**Migración en caliente completada**
-
-![image](https://github.com/user-attachments/assets/fc690d27-ab5d-4b38-8182-3f8a856e14fd)
-
-Ahora apagaremos la máquina y la volveremos a migrar. De esta manera haremos la migración en frío.
-
-![image](https://github.com/user-attachments/assets/a5009f82-6caf-4d6c-a03d-bfad70050ec4)
-
-**Migración en frío realizada**
-
-![image](https://github.com/user-attachments/assets/a49d7c0a-ed1d-4ffa-bd54-90c66772e932)
-
-## Creación red interna virtual entre máquinas 
-
-### Creación bridge
-
-Nos situamos en un nodo y hacemos clic en Red para poder crear el bridge.
-
-![image](https://github.com/user-attachments/assets/cf8f432b-e0a8-4497-a198-d514d727a9ec)
-
-Hacemos clic en crear y seleccionamos bridge.
-
-![image](https://github.com/user-attachments/assets/fe176f94-d5dc-4071-ab47-66f3c34c5431)
-
-Lo creamos en vacío pero con otro nombre
-
-![image](https://github.com/user-attachments/assets/24cbdc17-5816-4c4a-9487-2cb63e6d415e)
-
-### Creación de máquinas
-
-En las 2 máquinas que creemos debemos establecerle el bridge que acabamos de crear.
-
-![image](https://github.com/user-attachments/assets/4f775311-6dcc-48e4-85ed-a58a3612c2ee)
-
-![image](https://github.com/user-attachments/assets/40e2e7af-b40f-498c-9ca6-6436f7b5d43b)
-
-En una máquina editamos el archivo `etc/network/interfaces` y le introducimos los siguiente
+Ahora que tenemos internet en el contenedor, instalamos un servicio, como por ejemplo el SSH. Primero actualizamos el sistema con:
 
 ```
-auto eth0
-iface eth0 inet static
-    address 10.10.10.1
-    netmask 255.255.255.0
+apt update
 ```
 
-Y en la otra le agregamos lo mismo, pero cambiandole la ip
+![image](https://github.com/user-attachments/assets/189c2d9c-1a61-4f3e-a774-efdeaaa6862a)
+
+Y después instalamos el servicio que nos solicita la práctica con:
 
 ```
-auto eth0
-iface eth0 inet static
-    address 10.10.10.2
-    netmask 255.255.255.0
+apt install -y nginx
 ```
+
+![image](https://github.com/user-attachments/assets/067271d5-5397-434a-8eda-9700747e1058)
+
+### Contenedor 2 (nodo 2)
+
+Seguiremos el mismo proceso que en el primer contenedor del nodo 1.
+Creamos el contenedor introduciendole la siguiente configuración.
+
+![image](https://github.com/user-attachments/assets/f851ef7f-f29f-4f39-8e0e-3f1b4fd22fa8)
+
+Ahora iniciamos el contenedor y lo actualizamos
+
+![image](https://github.com/user-attachments/assets/6e92cde1-faf3-4da8-9cd8-231d0f56c549)
+
+Y ahora instalaremos un servicio.
+
+![image](https://github.com/user-attachments/assets/36498b5b-5501-410d-b6e0-2a364fb3d782)
+
+## Migración de máquinas (contenedores)
+
+### Creación del contenedor
+
+Realizamos el proceso de creación de un contenedor, en el primer nodo.
+
+![image](https://github.com/user-attachments/assets/6a46d411-622e-4bd7-8673-852dd777db07)
+
+### Migración en caliente
+
+Como nos indica el apartado, tendremos que inciar el contenedor e instalar un servicio que funcione en el contenedor, por lo tanto seguiremos los pasos de instalación de servicios del apartado anterior.
+
+![image](https://github.com/user-attachments/assets/51f85848-1598-4f28-a2f5-a249bab049fa)
+
+E instalamos el servicio
+
+![image](https://github.com/user-attachments/assets/896d1c58-0c44-4589-ab63-ee54bac1e683)
+
+Y ahora mientras el contenedor está iniciado, hacemos clic sobre migrar
+
+![image](https://github.com/user-attachments/assets/066b32d1-d41f-4168-b184-a863a28cba68)
+
+Confirmamos que se migre al nodo 2
+
+![image](https://github.com/user-attachments/assets/24a9466f-3d70-4398-bbf2-746adf034c32)
+
+![image](https://github.com/user-attachments/assets/095f5b39-0a92-4213-8cf1-6287d8f0e1fd)
+
+### Migración en frío
+
+Con el contenedor apagado, realizamos los pasos anteriores, clic derecho sobre él y seleccionar migrar.
+
+![image](https://github.com/user-attachments/assets/ef1bf291-a745-4340-9f6c-2231a2ab5b0a)
+
+El contenedor está apagado, por lo tanto realizamos la migración haciendo clic en el botón que dice "Migrar"
+
+![image](https://github.com/user-attachments/assets/6a1db5d1-ed04-491b-95cd-b60d439f4b07)
+
+## Creación del backup 
+
+### Creación contenedor
+
+Creamos un contenedor con un servicio. Primero seguimos el proceso de creación.
+
+![image](https://github.com/user-attachments/assets/a528f32d-4918-4996-a80c-55fc72acbfd6)
+
+Instalamos el servicio que deseemos (por ejemplo nginx)
+
+![image](https://github.com/user-attachments/assets/34b54807-de17-4c1f-8b17-0cdad3cba6c1)
+
+Ahora, seleccionaremos el contenedor y hacemos clic sobre la pestaña de Respaldo.
+
+![image](https://github.com/user-attachments/assets/8153d8a6-7085-45eb-bcb7-80e7829a4243)
+
+Respaldar ahora.
+
+![image](https://github.com/user-attachments/assets/e8d7ec13-a95e-4d48-aed0-a7f181f0a8f8)
+
+Tenemos ya el backup
+
+![image](https://github.com/user-attachments/assets/7cacf896-3268-41fb-8ee6-3226e80304c7)
+
+Ahora eliminamos el contenedor en el que está creado el backup
+
+![image](https://github.com/user-attachments/assets/fe306e8b-67e0-4b3f-8218-ec78f7d32649)
+
+Y la copia de seguridad está en el almacenamiento del nodo que seleccionamos
+
+![image](https://github.com/user-attachments/assets/c65f42a5-a6a2-4f38-bca6-36b9a0769fee)
+
+Hacemos clic en restaurar y recuperamos el contenedor
+
+![image](https://github.com/user-attachments/assets/8fc2d9c1-eedd-49f4-9dcf-d567267cea16)
+
+![image](https://github.com/user-attachments/assets/ca719256-1d07-4150-b5e0-802ab197ec65)
+
+### Backups automáticos
+
+En el clúster seleccionamos la pestaña de Respaldo y hacemos clic en Agregar
+
+![image](https://github.com/user-attachments/assets/4889210a-ed26-488f-820c-60fcc9ef72ef)
+
+Rellenamos los campos con la configuración que deseemos y el/los contenedor/es que queramos.
+
+![image](https://github.com/user-attachments/assets/d498eb2a-fef4-492e-b184-0fe02b810298)
