@@ -466,3 +466,87 @@ En cuanto a las actividades que realiza un administrador, podemos encontrar algu
 
 ## Punto 2 (identificación de 3 puestos de trabajo)
 
+### Puestos de trabajo
+
+Entre las múltiples de posibilidades de trabajo que hay a la hora de finalizar los estudios de la Administración de sistemas informáticos en red, podemos encontrar los siguientes puestos:
+
+- Administrador de redes: pieza clave en cualquier organización. Es un puesto que requiere de personas calificadas para mantener, configurar y administrar los sistemas informáticos de una compañía.
+- Técnico de soporte informático: responsables de un equipo de personal que podría incluir a asistentes de atención al cliente y analistas, técnicos de servicios informáticos y técnicos y administradores de red.
+- Administrador de redes: son los profesionales responsables de desarrollar, mantener y mejorar las redes informáticas de las empresas. Para optar a este puesto es necesario tener conocimientos especializados en este ámbito tecnológico
+
+#### Competencias técnicas
+
+-**Conocimiento sobre sistemas operativos**:
+
+Se debe tener un amplio conocimiento sobre los diferentes sistemas operativos existentes y entender cómo funcionan, 
+las posibilidades y limitaciones que presentan y la forma en la que se conectan entre ellos.
+
+-**Administración y gestión de redes**:
+
+Necesitas entender cómo operan las redes, cómo están configuradas y cómo mantenerlas para garantizar una conectividad efectiva y segura.
+
+-**Seguridad informática**:
+
+Con los constantes riesgos de seguridad en la tecnología actual, es crucial poseer conocimientos 
+en alguna de las ramas de la ciberseguridad para proteger los sistemas.
+
+#### Competencias personales
+
+-**Habilidades para resolver problemas**:
+
+En las tareas que debe realizar un administrador de sistemas pueden haber varios obstáculos que interfieran en el proceso de la solución de un problema en una empresa,
+para ello se necesita que un administrador de sistemas sea hábil a la hora de solucionarlos, y que se identifique rápidamente.
+
+-**Comunicación**:
+
+Esta hablidad que se requiere para ser un administrador de sistemas, es importante a la hora de realizar tareas en grupo, o para personas que tienen un conocimiento muy limitado sobre la informática.
+
+-**Capacidad de adaptación**:
+
+Para un informático es muy importante saber adaptarse a cada situación, ya que pueden surgir problemas muy diferentes y en circunstancias nada similares entre las mismas.
+
+-**Trabajo en equipo**:
+
+Actitudes de respeto, disposición para enseñar a las demás personas a la hora de utilizar una aplicación, aprender de los demás y tener respeto hacia los miembros de la empresa.
+
+## Punto 3 (análisis de las oportunidades laborales)
+
+### Sector público
+
+En cuanto al empleo en el sector público las características son las siguientes:
+
+#### Estabilidad laboral
+
+Las condiciones laborales se ven afectadas en mucha menor medida en caso de crisis que en el sector privado
+
+#### Horario
+
+Los trabajadores del sector público suelen tener menos horas semanales de trabajo que los del sector privado, además que durante el verano, los trabajadores para el sector público tienen la jornada un poco más reducida.
+
+#### Remuneración
+
+Los trabajadores del sector público a la hora de cobrar reciben más dinero que los del sector privado, salvo determinados perfiles en los que los trabajadores del sector público tienen una mejor remuneración
+
+### Sector privado
+
+Para el sector privado, las características son las siguientes:
+
+#### Contratación
+
+En cuanto a la contratación de personal laboral, en el sector privado la rigidez suele ser menor respecto a la del sector público
+
+#### Progresión profesional
+
+En el sector privado, ascender en tu puesto de trabajo es más sencillo y mas rápido que en el sector público y se puede encontrar oportunidades de progresar rápidamente en la carrera como profesional.
+
+#### Varierdad de puestos
+
+La diversidad de oportunidades laborales son mayores y se suele adaptar mejor a los intereses del trabajador.
+
+## Perfil personal
+
+Durante el curso de formación profesional de ASIR (Administración de sistemas informáticos en red) aprendí los conocimientos sobre las redes informáticas y las medidas de seguridad para determinadas situaciones en las que se pueda encontrar un trabajador. También la actitud y el carácter que debe tener un informático, a la hora de no estresarse con los contratiempos que puedan surgir, y la paciencia que se debe tener.
+
+En cuanto a mi perfil como trabajador (en un futuro) me gustaría destacar las habilidades para comunicarme con las demás personas, tanto en idioma castellano como en inglés.
+También destacar mi seriedad a la hora de realizar las tareas laborales para encontrar la solución. El trabajo en equipos es una fortaleza debido a mi facilidad de comunicación con los demás compañeros.
+Tengo una faciidad para adptarme a los posibles cambios que se puedan realizar en el entorno laboral en el que me encuentre.
