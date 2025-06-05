@@ -312,7 +312,6 @@ Seleccionamos la plantilla del Debian
 
 #### Discos
 
-
 ![image](https://github.com/user-attachments/assets/0290a146-fb81-4857-8e30-2efa4baf3f52)
 
 #### Núcleos
@@ -343,4 +342,79 @@ Instalamos el servidor que se nos pide (SSH)
 
 Lo activamos y lo iniciamos
 
+## Creación y gestión de máquinas virtuales
+
+### Máquina 1 (Alpine)
+
+Después de instalar los sistemas operativos, los introducimos en el servidor NFS, en mi caso me descargué 3 sistemas operativos.
+
+![image](https://github.com/user-attachments/assets/e069f9f0-53f7-4007-a95f-d73538ff4e71)
+
+Después hacemos clic en Crear VM y configuramos la máquina.
+Le damos el nombre que queramos
+
+![image](https://github.com/user-attachments/assets/5685f1a6-5a6e-4c62-8ffc-9142ab7ea84e)
+
+Introducimos el sistema operativo que deseemos, de los que están instalados en el servidor NFS
+
+![image](https://github.com/user-attachments/assets/5a835f01-6c72-49be-84e5-8a2a3dc0a154)
+
+Le indicamos el puente de acceso a internet.
+
+![image](https://github.com/user-attachments/assets/3d64525b-1b3d-4b70-a35a-29d0df8efb51)
+
+Dentro de la máquina instalamos el servicio
+
+![image](https://github.com/user-attachments/assets/b8c2af36-c9eb-4a7f-9325-eafa470cffc4)
+
+### Máquina 2 (Ubuntu Linux)
+
+Repetimos el mismo proceso de creación, pero en el otro nodo.
+Y cuando tengamos la máquina ya configurada y creada, instalamos el servicio.
+
+![image](https://github.com/user-attachments/assets/0ab16fde-7ea9-4463-a517-0bcbf06d4481)
+
+## Migración de máquinas virtuales
+
+En este apartado de la práctica, crearemos otra máquina virtual y la cambiaremos de nodo. Se puede realizar en modo caliente (máquina encendida) o en frío (máquina apagada).
+Lo primero es crear la máquina, con el sistema operativo restante.
+Realizamos todo el proceso de creación, en el que el resultado es el siguiente.
+
+![image](https://github.com/user-attachments/assets/a758a285-c4b3-4d09-9fcb-04d511b321bc)
+
+Instalamos el servicio en la máquina virtual
+
+![image](https://github.com/user-attachments/assets/7a020cbe-50ad-45b9-971c-42979e7c31f7)
+
+Ahora que la máquina está encendida, la migramos al otro nodo. De esta manera estaríamos haceindo la migración en caliente
+
+![image](https://github.com/user-attachments/assets/3c2baf23-c51b-4d35-a9b3-0861963667ea)
+
+**Migración en caliente completada**
+
+![image](https://github.com/user-attachments/assets/fc690d27-ab5d-4b38-8182-3f8a856e14fd)
+
+Ahora apagaremos la máquina y la volveremos a migrar. De esta manera haremos la migración en frío.
+
+![image](https://github.com/user-attachments/assets/a5009f82-6caf-4d6c-a03d-bfad70050ec4)
+
+**Migración en frío realizada**
+
+![image](https://github.com/user-attachments/assets/a49d7c0a-ed1d-4ffa-bd54-90c66772e932)
+
+## Creación red interna virtual entre máquinas 
+
+### Creación bridge
+
+Nos situamos en un nodo y hacemos clic en Red para poder crear el bridge.
+
+![image](https://github.com/user-attachments/assets/cf8f432b-e0a8-4497-a198-d514d727a9ec)
+
+Hacemos clic en crear y seleccionamos bridge.
+
+![image](https://github.com/user-attachments/assets/fe176f94-d5dc-4071-ab47-66f3c34c5431)
+
+Lo creamos en vacío pero con otro nombre
+
+![image](https://github.com/user-attachments/assets/24cbdc17-5816-4c4a-9487-2cb63e6d415e)
 
