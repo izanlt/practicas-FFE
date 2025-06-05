@@ -434,3 +434,5 @@ Para cada interfaz se necesitan las siguientes IPs:
 #### Versiones de pfSense
 
 Es fundamental que ambas máquinas tengan la misma versión de pfSense instalada para que no den errores.
+
+# Proyecto FOL
