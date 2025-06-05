@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/49b12a9e-006f-4a48-be84-a700246c7394)# DOCUMENTACIÓN PROYECTO PROXMOX (TEDRA)
+# DOCUMENTACIÓN PROYECTO PROXMOX (TEDRA)
 
 ---
 
