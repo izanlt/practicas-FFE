@@ -418,3 +418,28 @@ Lo creamos en vacío pero con otro nombre
 
 ![image](https://github.com/user-attachments/assets/24cbdc17-5816-4c4a-9487-2cb63e6d415e)
 
+### Creación de máquinas
+
+En las 2 máquinas que creemos debemos establecerle el bridge que acabamos de crear.
+
+![image](https://github.com/user-attachments/assets/4f775311-6dcc-48e4-85ed-a58a3612c2ee)
+
+![image](https://github.com/user-attachments/assets/40e2e7af-b40f-498c-9ca6-6436f7b5d43b)
+
+En una máquina editamos el archivo `etc/network/interfaces` y le introducimos los siguiente
+
+```
+auto eth0
+iface eth0 inet static
+    address 10.10.10.1
+    netmask 255.255.255.0
+```
+
+Y en la otra le agregamos lo mismo, pero cambiandole la ip
+
+```
+auto eth0
+iface eth0 inet static
+    address 10.10.10.2
+    netmask 255.255.255.0
+```
