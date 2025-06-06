@@ -545,7 +545,8 @@ La diversidad de oportunidades laborales son mayores y se suele adaptar mejor a 
 
 ## Perfil personal
 
-Durante el curso de formación profesional de ASIR (Administración de sistemas informáticos en red) aprendí los conocimientos sobre las redes informáticas y las medidas de seguridad para determinadas situaciones en las que se pueda encontrar un trabajador. También la actitud y el carácter que debe tener un informático, a la hora de no estresarse con los contratiempos que puedan surgir, y la paciencia que se debe tener.
+Durante el curso de formación profesional de ASIR (Administración de sistemas informáticos en red) aprendí los conocimientos sobre las redes informáticas y las medidas de seguridad para determinadas situaciones en las que 
+se pueda encontrar un trabajador. También la actitud y el carácter que debe tener un informático, a la hora de no estresarse con los contratiempos que puedan surgir, y la paciencia que se debe tener.
 
 En cuanto a mi perfil como trabajador (en un futuro) me gustaría destacar las habilidades para comunicarme con las demás personas, tanto en idioma castellano como en inglés.
 También destacar mi seriedad a la hora de realizar las tareas laborales para encontrar la solución. El trabajo en equipos es una fortaleza debido a mi facilidad de comunicación con los demás compañeros.
