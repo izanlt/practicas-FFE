@@ -109,6 +109,8 @@ Para dar permiso a las máquinas virtuales de acceso a las instrucciones del pro
 Set-VMProcessor -VMName proxmox -ExposeVirtualizationExtensions $true
 ```
 
+---
+
 ## Amacenamiento compartido
 
 ### Creación máquina virtual con servidor NFS
@@ -342,6 +344,8 @@ Instalamos el servidor que se nos pide (SSH)
 
 Lo activamos y lo iniciamos
 
+---
+
 ## Creación y gestión de máquinas virtuales (contenedores porque las máquinas no tienen conexión)
 
 ### Contenedor 1
@@ -381,6 +385,8 @@ Y ahora instalaremos un servicio.
 
 ![image](https://github.com/user-attachments/assets/36498b5b-5501-410d-b6e0-2a364fb3d782)
 
+---
+
 ## Migración de máquinas (contenedores)
 
 ### Creación del contenedor
@@ -418,6 +424,8 @@ Con el contenedor apagado, realizamos los pasos anteriores, clic derecho sobre �
 El contenedor está apagado, por lo tanto realizamos la migración haciendo clic en el botón que dice "Migrar"
 
 ![image](https://github.com/user-attachments/assets/6a1db5d1-ed04-491b-95cd-b60d439f4b07)
+
+---
 
 ## Creación del backup 
 
